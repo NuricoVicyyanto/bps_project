@@ -14,9 +14,11 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
 
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
+
+Route::get('/homepage', function () {
+    return view('welcome');
+});
