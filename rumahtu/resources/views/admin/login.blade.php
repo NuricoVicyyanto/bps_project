@@ -28,6 +28,8 @@
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                   <div class="card shadow-2-strong" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
+
+                      <img src="{{asset('assets/img/bps.png')}}" alt="">
           
                       <h3 class="mb-5">Sign in</h3>
           
