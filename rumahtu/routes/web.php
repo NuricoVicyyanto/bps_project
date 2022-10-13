@@ -20,6 +20,10 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('/homepage', function () {
-    return view('welcome');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/homepage', function () {
+        return view('welcome');
+    });
 });
+
