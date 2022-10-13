@@ -33,14 +33,15 @@
                           style="width: 185px;" alt="logo">
                       </div>
                       <h3 class="mb-4 text-center pt-4 font-weight-bold">Sign in</h3>
-          
+                      <form action="{{ route('postlogin')}}" method="post">
+                        {{ csrf_field() }}
                       <div class="form-outline mb-4 font-weight-bold">
-                        <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
+                        <input type="email" name="email" class="form-control" placeholder="Email">
                         <label class="form-label" for="typeEmailX-2">Email</label>
                       </div>
           
                       <div class="form-outline mb-4 font-weight-bold">
-                        <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+                        <input type="password" name="password" class="form-control" placeholder="Password">
                         <label class="form-label" for="typePasswordX-2">Password</label>
                       </div>
           
@@ -52,6 +53,7 @@
           
                       <a href="{{url('homepage')}}">test</a>
                       <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                    </form>
                     </div>
                   </div>
                 </div>
