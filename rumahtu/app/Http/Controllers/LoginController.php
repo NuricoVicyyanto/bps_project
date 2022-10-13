@@ -33,7 +33,7 @@ class LoginController extends Controller
     }
 
     public function registrasi(){
-        return view('backend.auth.registrasi');
+        return view('admin.register');
     }
 
     public function simpanregistrasi(Request $request){
@@ -45,6 +45,6 @@ class LoginController extends Controller
             'password' =>bcrypt($request->password),
             'remember_token' =>Str::random(60),
         ]);
-        return view('backend.auth.login');
+        return view('admin.register');
     }
 }

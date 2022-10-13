@@ -91,11 +91,13 @@
             </li>
 
             <!-- Nav Item - register -->
+            @if(Auth::user()->level == "admin")
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/registrasi">
                     <i class="fas fa-fw fa-user-plus"></i>
                     <span>Register</span></a>
             </li>
+            @endif
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
