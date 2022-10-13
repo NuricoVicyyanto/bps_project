@@ -63,7 +63,7 @@
 
     <!-- Nav Item - register -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{ url('registrasi') }}">
             <i class="fas fa-fw fa-user-plus"></i>
             <span>Register</span></a>
     </li>
