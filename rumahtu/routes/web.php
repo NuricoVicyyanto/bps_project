@@ -23,7 +23,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/homepage', function () {
-        return view('welcome');
+        return view('homepage');
     });
 });
 
