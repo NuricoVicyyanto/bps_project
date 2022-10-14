@@ -29,7 +29,7 @@
                   <div class="card shadow-2-strong" style="border-radius: 1rem;">
                     <div class="card-body p-5 ">
                       <div class="text-center" >
-                        <img src="{{asset('assets/img/bps.png')}}"
+                        <img src="{{asset('assets/img/tu logo.png')}}"
                           style="width: 185px;" alt="logo">
                       </div>
                       <h3 class="mb-4 text-center pt-4 font-weight-bold">Sign in</h3>
