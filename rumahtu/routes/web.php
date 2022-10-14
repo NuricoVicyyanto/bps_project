@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\HomepageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,10 @@ Route::group(['middleware' => ['auth', 'ceklevel:user']], function () {
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/homepage', function () {
-        return view('admin/homepage');
-    });
+    // Route::get('/homepage', function () {
+    //     return view('/homepage');
+    // });
+    Route::get('/homepage', [HomepageController::class, 'index'])->name('homepage');
 });
 
 
