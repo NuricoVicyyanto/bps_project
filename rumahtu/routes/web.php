@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\PenggunaController;
-
+use App\Http\Controllers\TableController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:user']], function () {
 });
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/table', [TableController::class, 'index'])->name('table');
     // Route::get('/homepage', function () {
     //     return view('/homepage');
     // });
