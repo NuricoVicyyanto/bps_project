@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:user']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/homepage', function () {
-        return view('homepage');
+        return view('admin/homepage');
     });
 });
 
