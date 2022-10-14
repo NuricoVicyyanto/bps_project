@@ -70,6 +70,14 @@
     </li>
     @endif
 
+    @if(Auth::user()->level == "admin")
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('registrasi') }}">
+            <i class="fa-solid fa-people-simple"></i>
+            <span>Daftar User</span></a>
+    </li>
+    @endif
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

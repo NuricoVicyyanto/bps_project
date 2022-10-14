@@ -24,7 +24,6 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/registrasi', [LoginController::class, 'registrasi']);
-
     Route::post('/simpanregistrasi', [LoginController::class, 'simpanregistrasi'])->name('simpanregistrasi');
 });
 
