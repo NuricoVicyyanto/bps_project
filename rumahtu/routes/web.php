@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\PenggunaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,10 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/registrasi', [LoginController::class, 'registrasi']);
     Route::post('/simpanregistrasi', [LoginController::class, 'simpanregistrasi'])->name('simpanregistrasi');
+
+    // TU
+    Route::get('/daftaruser', [PenggunaController::class, 'index'])->name('daftaruser');
+    Route::get('/hapuspengguna/{id}', [PenggunaController::class, 'destroy'])->name('hapuspengguna');
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:user']], function () {

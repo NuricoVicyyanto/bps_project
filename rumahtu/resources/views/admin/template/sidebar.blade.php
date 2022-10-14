@@ -72,7 +72,7 @@
 
     @if(Auth::user()->level == "admin")
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('registrasi') }}">
+        <a class="nav-link" href="{{ url('daftaruser') }}">
             <i class="fas fa-fw fa-solid fa-users"></i>
             <span>Daftar User</span></a>
     </li>
