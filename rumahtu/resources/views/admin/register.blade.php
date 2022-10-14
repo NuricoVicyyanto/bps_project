@@ -28,6 +28,13 @@
             </div>
           </div>
           <div class="input-group mb-3">
+          <select class="form-select" required aria-label="Default select example" name="level">
+            <option selected>Role Option</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+        </div>
+          <div class="input-group mb-3">
             <input type="password" class="form-control" required name="password" placeholder="Password">
             <div class="input-group-append">
               <div class="input-group-text">

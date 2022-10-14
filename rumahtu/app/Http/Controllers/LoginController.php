@@ -39,7 +39,7 @@ class LoginController extends Controller
     public function simpanregistrasi(Request $request){
         User::create([
             'name' => $request->name,
-            'level' => 'user',
+            'level' => $request->level,
             'email' => $request->email,
             'number' => $request->number,
             'password' =>bcrypt($request->password),
