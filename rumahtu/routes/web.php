@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\TableController;
+use App\Http\Controllers\QrController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:user']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/table', [TableController::class, 'index'])->name('table');
+    Route::get('/qrcode', [QRController::class, 'index'])->name('qrcode');
     // Route::get('/homepage', function () {
     //     return view('/homepage');
     // });

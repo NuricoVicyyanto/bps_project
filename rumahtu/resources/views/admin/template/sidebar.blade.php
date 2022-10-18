@@ -42,7 +42,7 @@
 
     <!-- Nav Item - QR-code -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{ url('qrcode') }}">
             <i class="fas fa-fw fa-qrcode"></i>
             <span>QR Code</span></a>
     </li>
