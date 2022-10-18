@@ -2,14 +2,15 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('homepage') }}">
-        <div class="sidebar-brand-icon rotate-n-15">
-            {{-- <i class="fas fa-laugh-wink"></i> --}}
-            <img src="{{asset('assets/img/icon.ico')}}" alt="">
+    <a class="sidebar-brand align-items-center justify-content-center" href="{{ url('homepage') }}">
+        <div class="sidebar-brand-icon ">
+            {{-- <i class="fas fa-laugh-wink"></i> --}} 
+            <img class="w-75 h-75" src="{{asset('assets/img/logowhite.ico')}}" alt="">
         </div>
-        <div class="sidebar-brand-text mx-3">Rumah_TU</div>
+        {{-- <div class="sidebar-brand-text mx-3">Rumah_TU</div> --}}
     </a>
-
+<br>
+<br>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 

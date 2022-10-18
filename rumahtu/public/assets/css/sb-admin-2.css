@@ -10449,7 +10449,7 @@ a:focus {
 }
 
 .sidebar .sidebar-brand {
-  height: 4.375rem;
+  height: 4.375 rem;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 800;
@@ -10461,7 +10461,7 @@ a:focus {
 }
 
 .sidebar .sidebar-brand .sidebar-brand-icon i {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .sidebar .sidebar-brand .sidebar-brand-text {
@@ -10560,8 +10560,13 @@ a:focus {
     content: '\f105';
   }
   .sidebar .sidebar-brand .sidebar-brand-icon i {
-    font-size: 2rem;
+    font-size: 1rem;
   }
+
+  .sidebar-brand-icon{
+    width: 90px;
+  }
+
   .sidebar .sidebar-brand .sidebar-brand-text {
     display: inline;
   }
@@ -10615,7 +10620,7 @@ a:focus {
     display: none;
   }
   .sidebar.toggled .sidebar-brand .sidebar-brand-icon i {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   .sidebar.toggled .sidebar-brand .sidebar-brand-text {
     display: none;
