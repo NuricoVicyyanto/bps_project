@@ -36,7 +36,7 @@
                             <td>Tiger Nixon</td>
                             <td>System Architect</td>
                             <td>Edinburgh</td>
-                            <td>61</td>x
+                            <td>61</td>
                             <td> <div class="btn-group" role="group" aria-label="Basic example"> <a href="" type="button" class="btn btn-warning" data-toggle="edit-bawah" data-placement="bottom" title="Edit data"><i class="fas fa-edit"></i></a>
                             <a href="" type="button" class="btn btn-danger" data-toggle="edit-atas" data-placement="right" title="Hapus data"><i class="fas fa-trash-alt"></i></a>
                             <!-- Modal -->
