@@ -50,6 +50,6 @@ class Users extends Model
     protected $table = "users";
     protected $primaryKey = "id";
     protected $fillable = [
-        'name', 'level', 'email'
+        'name', 'level', 'email', 'no_hp', 'nip', 'jabatan'
     ];
 }

@@ -11,8 +11,11 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                   <thead>
                                     <tr>
+                                      <th>NIP</th>
                                       <th>Username</th>
                                       <th>Email</th>
+                                      <th>No HP</th>
+                                      <th>Jabatan</th>
                                       <th>Level</th>
                                       <th>Aksi</th>
                                     </tr>
@@ -20,8 +23,11 @@
                                   <tbody>
                                     @foreach ($dtPengguna as $item)
                                     <tr>
+                                      <td>{{ $item->nip}}</td>
                                       <td>{{ $item->name}}</td>
                                       <td>{{ $item->email}}</td>
+                                      <td>{{ $item->no_hp}}</td>
+                                      <td>{{ $item->jabatan}}</td>
                                       <td>{{ $item->level}}</td>
                                       <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">

@@ -41,7 +41,9 @@ class LoginController extends Controller
             'name' => $request->name,
             'level' => $request->level,
             'email' => $request->email,
-            'number' => $request->number,
+            'no_hp' => $request->no_hp,
+            'nip' => $request->nip,
+            'jabatan' => $request->jabatan,
             'password' =>bcrypt($request->password),
             'remember_token' =>Str::random(60),
         ]);

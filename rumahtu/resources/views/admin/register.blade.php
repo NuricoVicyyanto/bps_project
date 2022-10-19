@@ -42,6 +42,30 @@
               </div>
             </div>
           </div>
+          <div class="input-group mb-3">
+            <input type="number" class="form-control" required name="no_hp" placeholder="No Hp">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="number" class="form-control" required name="nip" placeholder="nip">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" required name="jabatan" placeholder="jabatan">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <!-- /.col -->
             <div class="col-6">
