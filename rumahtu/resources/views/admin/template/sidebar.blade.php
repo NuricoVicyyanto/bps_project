@@ -3,12 +3,12 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('homepage') }}">
-        <div class="sidebar-brand-icon rotate-n-15">
+        <div class="sidebar-brand-icon">
             {{-- <i class="fas fa-laugh-wink"></i> --}}
-            <img src="{{asset('assets/img/logo.ico')}}"
-                          style="width: 50px;" alt="logo">
+            <img src="{{asset('assets/img/logowhite.ico')}}"
+                          style="width: 70px;" alt="logo">
         </div>
-        <div class="sidebar-brand-text mx-3">Rumah_TU</div>
+        {{-- <div class="sidebar-brand-text mx-3">Rumah_TU</div> --}}
     </a>
 
     <!-- Divider -->

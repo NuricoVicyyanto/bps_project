@@ -6,6 +6,10 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\QrController;
+
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\NotificationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +51,13 @@ Route::group(['middleware' => ['auth']], function () {
     //     return view('/homepage');
     // });
     Route::get('/homepage', [HomepageController::class, 'index'])->name('homepage');
+
+    //Url Profile
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('/messages', [MessagesController::class, 'index'])->name('messages');
+    Route::get('/notification', [NotificationController::class, 'index'])->name('notification');   
+
+
 });
 
 
