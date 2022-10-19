@@ -38,7 +38,11 @@ Route::group(['middleware' => ['auth', 'ceklevel:user']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/table', [TableController::class, 'index'])->name('table');
+    
     Route::get('/qrcode', [QRController::class, 'index'])->name('qrcode');
+    Route::post('/qrcode', [QRController::class, 'store'])->name('store');
+    Route::get('qrcode/{id}', [QrController::class, 'generate'])->name('generate');
+    Route::get('/delqr/{id}', [QrController::class, 'destroy'])->name('delqr');
     // Route::get('/homepage', function () {
     //     return view('/homepage');
     // });

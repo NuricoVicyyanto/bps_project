@@ -1,20 +1,57 @@
 @extends('admin.dashboard')
 @section('content')
-
-
- <!-- Begin Page Content -->
- <div class="container-fluid">
-
-<div  id="url_wrapper">
-    <div id="url">
-        <div id="advise">Search keyword or paste link here</div>
-        <form method="post" onsubmit="return false">
-            <input id="input" type="text" name="url" autocomplete="off">
-            <input id="submit" type="submit" value="Submit">
-            <div id="suggestions"></div>
-        </form>
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">QrCode Maker</h6>
+            </div>
+            <div class="row mt-5">
+                <div class="card-body">
+                    <form class="form-inline" action="{{ route('store') }}" method="POST">
+                        @csrf
+                        <div class="form-group mb-2">
+                            <input type="text" class="form-control" name="title" placeholder="Masukkan Teks">
+                            <input type="text" class="form-control" name="name" placeholder="Masukkan Teks">
+                        </div>
+                        <button type="submit" class="btn btn-primary ml-1 mb-2">Create</button>
+                    </form>
+                    <br>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Link</th>
+                                    <th scope="col">Opsi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $data)
+                                    <tr>
+                                        <td>{{ $data->title }}</td>
+                                        <td>{{ $data->name }}</td>
+                                        <td>
+                                            <a href="{{ route('generate', $data->id) }}"
+                                                class="btn btn-primary"><i class="fas fa-qrcode"></i></a>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <a href="{{ url('delqr', $data->id) }}" type="button"
+                                                    class="btn btn-danger" data-toggle="edit-atas" data-placement="right"
+                                                    title="Hapus data"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<!-- /.container-fluid -->
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
 @endsection

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Models\Qr;
 
 class QrController extends Controller
 {
@@ -13,7 +15,8 @@ class QrController extends Controller
      */
     public function index()
     {
-        return view('admin.qrcode');
+        $data = Qr::all();
+        return view('admin.qrcode', ['data' => $data]);
     }
 
     /**
@@ -34,7 +37,18 @@ class QrController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Qr;
+        $data->title = $request->title;
+        $data->name = $request->name;
+        $data->save();
+        return back();
+    }
+
+    public function generate ($id)
+    {
+        $data = Qr::findOrFail($id);
+        $qrcode = QrCode::size(200)->generate($data->name);
+        return view('admin.qrcreate',compact('qrcode'));
     }
 
     /**
@@ -79,6 +93,8 @@ class QrController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $peng = Qr::findorfail($id);
+        $peng->delete();
+        return redirect('qrcode');
     }
 }
