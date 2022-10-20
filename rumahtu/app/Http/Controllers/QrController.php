@@ -47,7 +47,7 @@ class QrController extends Controller
     public function generate($id)
     {
         $data = Qr::findOrFail($id);
-        $qrcode = QrCode::size(200)->generate($data->name);
+        $qrcode = QrCode::format('png')->size(200)->generate($data->name);
         return view('admin.qrcreate', compact('qrcode'));
     }
 

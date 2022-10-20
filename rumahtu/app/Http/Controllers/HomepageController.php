@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class HomepageController extends Controller
 {
@@ -13,7 +15,8 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        return view('admin.homepage');
+        $count = DB::table('users')->count();
+        return view('admin.homepage', compact('count'));
     }
 
     /**
