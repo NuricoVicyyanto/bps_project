@@ -7,10 +7,10 @@
       <div class="card">
         <div class="card-body register-card-body m-4">
 
-          <form action="{{ route('simpanregistrasi')}}" method="post">
+          <form action="{{ route('simpantask')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="input-group mb-3">
-              <input type="text" class="form-control" required name="name" placeholder="Full name">
+              <input type="text" class="form-control" required name="name" placeholder="Full name" readonly value="{{ auth()->user()->name }}">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-user"></span>
@@ -18,7 +18,7 @@
               </div>
             </div>
             <div class="input-group mb-3">
-              <input type="email" class="form-control" required name="email" placeholder="Task">
+              <input type="text" class="form-control" required name="caption" placeholder="Task">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-tasks"></span>
@@ -28,11 +28,9 @@
             <div class="input-group mb-3">
               <input type="date" class="form-control" name="date" placeholder="dd-mm-yyyy">
             </div>
-            <div class="input-group mb-3">
-                <div class="input-group-append">
-                    <input type="file" class="form-control-file">
-                </div>
-            </div>
+            <div class="form-group">
+              <input name="file" required type="file" id="gambar">
+          </div>
             <div class="row">
               <!-- /.col -->
               <div class="col-6">

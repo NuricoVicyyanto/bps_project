@@ -59,6 +59,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/messages', [MessagesController::class, 'index'])->name('messages');
     Route::get('/notification', [NotificationController::class, 'index'])->name('notification');
 
+    Route::post('/simpantask', [TaskController::class, 'store'])->name('simpantask');
+    Route::get('/hapustask/{id}', [TableController::class, 'destroy'])->name('hapustask');
 
 });
 

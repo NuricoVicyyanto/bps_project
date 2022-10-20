@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class TaskController extends Controller
 {
@@ -34,7 +35,19 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nm = $request->file;
+        $namaFile = "http://127.0.0.1:8000/img/" . $nm->getClientOriginalName();
+
+        $dtUpload = new Task;
+        $dtUpload->name = $request->name;
+        $dtUpload->caption = $request->caption;
+        $dtUpload->date = $request->date;
+        $dtUpload->file = $namaFile;
+
+        $nm->move(public_path() . '/img', $namaFile);
+        $dtUpload->save();
+
+        return redirect('task');
     }
 
     /**

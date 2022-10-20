@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Task;
+
 
 class TableController extends Controller
 {
@@ -13,7 +15,8 @@ class TableController extends Controller
      */
     public function index()
     {
-        return view('admin.table');
+        $dtTask = Task::all();
+        return view('admin.table', compact('dtTask'));
     }
 
     /**
@@ -79,6 +82,14 @@ class TableController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dok = Task::findorfail($id);
+        $file = public_path('/img/') . $dok->gambar;
+
+        if (file_exists($file)) {
+            @unlink($file);
+        }
+
+        $dok->delete();
+        return back();
     }
 }
