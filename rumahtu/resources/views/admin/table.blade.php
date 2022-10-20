@@ -17,7 +17,6 @@
                                 <th>Task</th>
                                 <th>Date</th>
                                 <th>File</th>
-                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -29,11 +28,12 @@
                                         <td>{{ $item->caption }}</td>
                                         <td>{{ $item->date }}</td>
                                         <td><a href="{{ $item->file }}">Download</a></td>
-                                        <td></td>
                                         <td>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="{{ url('hapustask', $item->id) }}" type="button"
                                                     class="btn btn-danger" data-toggle="edit-atas" data-placement="right"
                                                     title="Hapus data"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
                                         </td>
                                     </tr>
                                 @elseif(auth()->user()->level == 'user')
@@ -43,12 +43,13 @@
                                             <td>{{ $item->caption }}</td>
                                             <td>{{ $item->date }}</td>
                                             <td><a href="{{ $item->file }}">Download</a></td>
-                                            <td></td>
                                             <td>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
                                                     <a href="{{ url('hapustask', $item->id) }}" type="button"
                                                         class="btn btn-danger" data-toggle="edit-atas"
                                                         data-placement="right" title="Hapus data"><i
                                                             class="fas fa-trash-alt"></i></a>
+                                                </div>
                                             </td>
                                         </tr>
                                     @else
