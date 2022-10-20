@@ -15,7 +15,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item {{ Request::is('homepage') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('homepage') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
@@ -43,28 +43,28 @@
     @endif --}}
 
     <!-- Nav Item - QR-code -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('qrcode') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('qrcode') }}">
             <i class="fas fa-fw fa-qrcode"></i>
             <span>QR Code</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('table') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('table') }}">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('task') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('task') }}">
             <i class="fas fa-tasks"></i>
             <span>Task</span></a>
     </li>
 
     <!-- Nav Item - voting -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('vote') ? 'active' : '' }}">
         <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-chart-pie"></i>
             <span>Voting</span></a>
@@ -72,7 +72,7 @@
 
     <!-- Nav Item - register -->
     @if(Auth::user()->level == "admin")
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('registrasi') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('registrasi') }}">
             <i class="fas fa-fw fa-user-plus"></i>
             <span>Register</span></a>
@@ -80,7 +80,7 @@
     @endif
 
     @if(Auth::user()->level == "admin")
-    <li class="nav-item">
+    <li class="nav-item {{ Request::is('daftaruser') ? 'active' : '' }}">
         <a class="nav-link" href="{{ url('daftaruser') }}">
             <i class="fas fa-fw fa-solid fa-users"></i>
             <span>Daftar User</span></a>
