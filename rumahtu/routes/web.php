@@ -42,7 +42,8 @@ Route::group(['middleware' => ['auth', 'ceklevel:user']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/table', [TableController::class, 'index'])->name('table');
-    
+    Route::get('/task', [TaskController::class, 'index'])->name('task');
+
     Route::get('/qrcode', [QRController::class, 'index'])->name('qrcode');
     Route::post('/qrcode', [QRController::class, 'store'])->name('store');
     Route::get('qrcode/{id}', [QrController::class, 'generate'])->name('generate');
@@ -55,7 +56,7 @@ Route::group(['middleware' => ['auth']], function () {
     //Url Profile
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('/messages', [MessagesController::class, 'index'])->name('messages');
-    Route::get('/notification', [NotificationController::class, 'index'])->name('notification');   
+    Route::get('/notification', [NotificationController::class, 'index'])->name('notification');
 
 
 });

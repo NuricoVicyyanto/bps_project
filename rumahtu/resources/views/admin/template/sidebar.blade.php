@@ -56,6 +56,13 @@
             <span>Tables</span></a>
     </li>
 
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('task') }}">
+            <i class="fas fa-tasks"></i>
+            <span>Task</span></a>
+    </li>
+
     <!-- Nav Item - voting -->
     <li class="nav-item">
         <a class="nav-link" href="tables.html">
