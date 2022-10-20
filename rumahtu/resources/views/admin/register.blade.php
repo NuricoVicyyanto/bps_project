@@ -46,7 +46,7 @@
             <input type="number" class="form-control" required name="no_hp" placeholder="No Hp">
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+                <span class="fas fa-mobile"></span>
               </div>
             </div>
           </div>
@@ -54,7 +54,7 @@
             <input type="number" class="form-control" required name="nip" placeholder="nip">
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+                <span class="fas fa-code"></span>
               </div>
             </div>
           </div>
