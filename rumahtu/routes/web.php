@@ -10,6 +10,7 @@ use App\Http\Controllers\QrController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\TaskController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
