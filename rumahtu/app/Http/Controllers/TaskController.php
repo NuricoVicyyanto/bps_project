@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Task;
 
+
+
 class TaskController extends Controller
 {
     /**
@@ -46,7 +48,6 @@ class TaskController extends Controller
 
         $nm->move(public_path() . '/img', $namaFile);
         $dtUpload->save();
-
         return redirect('task');
     }
 
