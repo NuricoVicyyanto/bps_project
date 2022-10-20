@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\VotingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,6 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     //Url Profile
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('/voting', [VotingController::class, 'index'])->name('voting');
     Route::get('/messages', [MessagesController::class, 'index'])->name('messages');
     Route::get('/notification', [NotificationController::class, 'index'])->name('notification');
 

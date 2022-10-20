@@ -64,8 +64,8 @@
     </li>
 
     <!-- Nav Item - voting -->
-    <li class="nav-item {{ Request::is('vote') ? 'active' : '' }}">
-        <a class="nav-link" href="tables.html">
+    <li class="nav-item {{ Request::is('voting') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('voting') }}">
             <i class="fas fa-fw fa-chart-pie"></i>
             <span>Voting</span></a>
     </li>
