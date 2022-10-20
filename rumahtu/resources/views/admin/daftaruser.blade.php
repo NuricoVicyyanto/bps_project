@@ -30,9 +30,13 @@
                                       <td>{{ $item->jabatan}}</td>
                                       <td>{{ $item->level}}</td>
                                       <td>
+                                        @if($item->name == auth()->user()->name)
+                                        
+                                        @else
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                           <a href="{{ url('hapuspengguna', $item->id) }}" type="button" class="btn btn-danger" data-toggle="edit-atas" data-placement="right" title="Hapus data"><i class="fas fa-trash-alt"></i></a>
                                         </div>
+                                        @endif
                                       </td>
                                     </tr>
                                     @endforeach
