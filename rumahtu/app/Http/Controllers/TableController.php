@@ -92,4 +92,13 @@ class TableController extends Controller
         $dok->delete();
         return back();
     }
+
+    public function approve($id, $request)
+    {
+        $dok = Task::findorfail($id);
+        $dok->review = 'Approve';
+        $dok->save();
+
+        return back();
+    }
 }

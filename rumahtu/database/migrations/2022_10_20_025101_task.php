@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('caption', 100);
             $table->string('date', 100);
+            $table->string('review', 100);
             $table->string('file', 100);
             $table->timestamps();
         });

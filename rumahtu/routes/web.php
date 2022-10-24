@@ -64,6 +64,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/simpantask', [TaskController::class, 'store'])->name('simpantask');
     Route::get('/hapustask/{id}', [TableController::class, 'destroy'])->name('hapustask');
 
+    Route::get('/acctask/{id}', [TableController::class, 'approve'])->name('acctask');
+
 });
 
 

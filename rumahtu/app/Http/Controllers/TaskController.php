@@ -42,6 +42,7 @@ class TaskController extends Controller
         $dtUpload->name = $request->name;
         $dtUpload->caption = $request->caption;
         $dtUpload->date = $request->date;
+        $dtUpload->review = 'Pending';
         $dtUpload->file = $namaFile;
 
         $nm->move(public_path() . '/img', $namaFile);

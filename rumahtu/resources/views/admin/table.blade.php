@@ -16,6 +16,7 @@
                                 <th>Name</th>
                                 <th>Task</th>
                                 <th>Date</th>
+                                <th>Status</th>
                                 <th>File</th>
                                 <th>Aksi</th>
                             </tr>
@@ -27,12 +28,17 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->caption }}</td>
                                         <td>{{ $item->date }}</td>
+                                        <td>{{ $item->review }}</td>
                                         <td><a href="{{ $item->file }}">Download</a></td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="{{ url('hapustask', $item->id) }}" type="button"
                                                     class="btn btn-danger" data-toggle="edit-atas" data-placement="right"
                                                     title="Hapus data"><i class="fas fa-trash-alt"></i></a>
+                                                
+                                                    <a href="{{ url('acctask', $item->id) }}" type="button"
+                                                        class="btn btn-check" data-toggle="edit-atas" data-placement="right"
+                                                        title="Hapus data"><i class="fas fa-trash-alt"></i></a>
                                             </div>
                                         </td>
                                     </tr>
@@ -42,6 +48,7 @@
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->caption }}</td>
                                             <td>{{ $item->date }}</td>
+                                            <td>Pending</td>
                                             <td><a href="{{ $item->file }}">Download</a></td>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
@@ -61,7 +68,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <!-- /.container-fluid -->
 @endsection
