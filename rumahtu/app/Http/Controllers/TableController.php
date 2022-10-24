@@ -93,12 +93,19 @@ class TableController extends Controller
         return back();
     }
 
-    public function approve($id, $request)
+    public function approve($id)
     {
-        $dok = Task::findorfail($id);
-        $dok->review = 'Approve';
-        $dok->save();
+        $leave = Task::findOrFail($id);
+        $leave->review = 'Approve'; //Approved
+        $leave->save();
+        return redirect()->back(); //Redirect user somewhere
+    }
 
-        return back();
+    public function ejject($id)
+    {
+        $leave = Task::findOrFail($id);
+        $leave->review = 'Rejected'; //Approved
+        $leave->save();
+        return redirect()->back(); //Redirect user somewhere
     }
 }

@@ -65,6 +65,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/hapustask/{id}', [TableController::class, 'destroy'])->name('hapustask');
 
     Route::get('/acctask/{id}', [TableController::class, 'approve'])->name('acctask');
+    Route::get('/ejtask/{id}', [TableController::class, 'ejject'])->name('ejtask');
 
 });
 

@@ -35,10 +35,12 @@
                                                 <a href="{{ url('hapustask', $item->id) }}" type="button"
                                                     class="btn btn-danger" data-toggle="edit-atas" data-placement="right"
                                                     title="Hapus data"><i class="fas fa-trash-alt"></i></a>
-                                                
-                                                    <a href="{{ url('acctask', $item->id) }}" type="button"
-                                                        class="btn btn-check" data-toggle="edit-atas" data-placement="right"
-                                                        title="Hapus data"><i class="fas fa-trash-alt"></i></a>
+                                                <a href="{{ url('ejtask', $item->id) }}" type="button"
+                                                    class="btn btn-warning" data-toggle="edit-atas" data-placement="right"
+                                                    title="Tolak data"><i class="fas fa-eject"></i></a>
+                                                <a href="{{ url('acctask', $item->id) }}" type="button"
+                                                    class="btn btn-success" data-toggle="edit-atas" data-placement="right"
+                                                    title="Approve data"><i class="fas fa-check"></i></a>
                                             </div>
                                         </td>
                                     </tr>
