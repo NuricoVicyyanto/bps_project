@@ -26,15 +26,6 @@
 
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 
-    <style type="text/css">
-        #qrcode {
-            width: 160px;
-            height: 160px;
-            margin-top: 15px;
-        }
-    </style>
-
-
 </head>
 
 <body id="page-top">
