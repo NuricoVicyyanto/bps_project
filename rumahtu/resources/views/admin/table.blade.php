@@ -28,7 +28,16 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->caption }}</td>
                                         <td>{{ $item->date }}</td>
-                                        <td>{{ $item->review }}</td>
+                                        @if ($item->review == 'Pending')
+                                            <td><span class="badge badge-warning">{{ $item->review }}</span>
+                                            </td>
+                                        @elseif($item->review == 'Approve')
+                                            <td><span class="badge badge-primary">{{ $item->review }}</span>
+                                            </td>
+                                        @else
+                                            <td><span class="badge badge-danger">{{ $item->review }}</span>
+                                            </td>
+                                        @endif
                                         <td><a href="{{ $item->file }}">Download</a></td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
@@ -37,7 +46,7 @@
                                                     title="Hapus data"><i class="fas fa-trash-alt"></i></a>
                                                 <a href="{{ url('ejtask', $item->id) }}" type="button"
                                                     class="btn btn-warning" data-toggle="edit-atas" data-placement="right"
-                                                    title="Tolak data"><i class="fas fa-eject"></i></a>
+                                                    title="Tolak data"><i class="fas fa-times"></i></a>
                                                 <a href="{{ url('acctask', $item->id) }}" type="button"
                                                     class="btn btn-success" data-toggle="edit-atas" data-placement="right"
                                                     title="Approve data"><i class="fas fa-check"></i></a>
@@ -50,7 +59,16 @@
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->caption }}</td>
                                             <td>{{ $item->date }}</td>
-                                            <td>Pending</td>
+                                            @if ($item->review == 'Pending')
+                                                <td><span class="badge badge-warning">{{ $item->review }}</span>
+                                                </td>
+                                            @elseif($item->review == 'Approve')
+                                                <td><span class="badge badge-primary">{{ $item->review }}</span>
+                                                </td>
+                                            @else
+                                                <td><span class="badge badge-danger">{{ $item->review }}</span>
+                                                </td>
+                                            @endif
                                             <td><a href="{{ $item->file }}">Download</a></td>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
