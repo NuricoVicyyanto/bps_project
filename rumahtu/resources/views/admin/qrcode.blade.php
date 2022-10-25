@@ -5,18 +5,17 @@
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">QrCode Maker</h6>
             </div>
-            <div class="row mt-5">
                 <div class="card-body">
-                    <form class="form-inline" action="{{ route('store') }}" method="POST">
-                        @csrf
-                        <div class="form-group mb-2">
-                            <input type="text" class="form-control" name="title" placeholder="Masukkan Teks">
-                            <input type="text" class="form-control" name="name" placeholder="Masukkan Teks">
-                        </div>
-                        <button type="submit" class="btn btn-primary ml-1 mb-2">Create</button>
-                    </form>
-                    <br>
                     <div class="table-responsive">
+                        <form class="form-inline" action="{{ route('store') }}" method="POST">
+                            @csrf
+                            <div class="form-group mb-2">
+                                <input type="text" class="form-control" name="title" placeholder="Masukkan Teks">
+                                <input type="text" class="form-control" name="name" placeholder="Masukkan Teks">
+                            </div>
+                            <button type="submit" class="btn btn-primary ml-1 mb-2">Create</button>
+                        </form>
+                        <br>
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
@@ -45,8 +44,9 @@
                         </table>
                     </div>
                 </div>
-            </div>
         </div>
+
+
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
