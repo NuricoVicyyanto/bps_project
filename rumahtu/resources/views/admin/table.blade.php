@@ -2,7 +2,6 @@
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
-
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -39,48 +38,17 @@
                                             </td>
                                         @endif
                                         <td><a href="{{ $item->file }}">Download</a></td>
-                                        
-                                        <td>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                    data-target="#exampleModal">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
 
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">Konfirmasi
-                                                                </h5>
-                                                                <button type="button" class="close" data-dismiss="modal"
-                                                                    aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                Apakah anda yaking ingin menghapus
-                                                                <b>{{ $item->caption }}</b> ?
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">Batal</button>
-                                                                <a href="{{ url('hapustask', $item->id) }}" type="button"
-                                                                    class="btn btn-danger" data-toggle="edit-atas"
-                                                                    data-placement="right" title="Hapus data"><i
-                                                                        class="fas fa-trash-alt"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <a href="{{ url('ejtask', $item->id) }}" type="button"
-                                                    class="btn btn-warning" data-toggle="edit-atas" data-placement="right"
-                                                    title="Tolak data"><i class="fas fa-times"></i></a>
-                                                <a href="{{ url('acctask', $item->id) }}" type="button"
-                                                    class="btn btn-success" data-toggle="edit-atas" data-placement="right"
-                                                    title="Approve data"><i class="fas fa-check"></i></a>
+                                        <td>
+                                            <a href="{{ url('hapustask', $item->id) }}" type="button"
+                                                class="btn btn-danger" data-toggle="edit-atas" data-placement="right"
+                                                title="Hapus data"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="{{ url('ejtask', $item->id) }}" type="button" class="btn btn-warning"
+                                                data-toggle="edit-atas" data-placement="right" title="Tolak data"><i
+                                                    class="fas fa-times"></i></a>
+                                            <a href="{{ url('acctask', $item->id) }}" type="button" class="btn btn-success"
+                                                data-toggle="edit-atas" data-placement="right" title="Approve data"><i
+                                                    class="fas fa-check"></i></a>
                                         </td>
                                     </tr>
                                 @elseif(auth()->user()->level == 'user')
