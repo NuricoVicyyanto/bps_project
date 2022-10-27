@@ -5,6 +5,11 @@
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
     </div>
+    <select class="form-select form-select-sm m-3 w-25" aria-label=".form-select-sm example">
+        @foreach ($dtKaryawan as $item)
+        <option value={{ $item->id }}>{{ $item->name }}</option>
+        @endforeach
+    </select>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
