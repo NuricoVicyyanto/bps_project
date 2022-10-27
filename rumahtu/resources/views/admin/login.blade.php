@@ -18,7 +18,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
-    <link rel="icon" href="{{asset('assets/img/icon.svg')}}">
+    <link rel="icon" href="{{asset('assets/img/logoi.ico')}}">
 
 </head>
 
