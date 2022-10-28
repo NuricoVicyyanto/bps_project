@@ -104,6 +104,14 @@
     </li>
     @endif
 
+    @if(Auth::user()->level == "admin")
+    <li class="nav-item {{ Request::is('tools') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ url('tools') }}">
+            <i class="fas fa-fw fa-solid fa-tools"></i>
+            <span>Tools</span></a>
+    </li>
+    @endif
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
