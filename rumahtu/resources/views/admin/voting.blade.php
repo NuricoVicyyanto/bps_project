@@ -11,6 +11,27 @@
         @endforeach
     </select>
     <div class="card-body">
+        <div class="form-group">
+            <label for="topic">What can we help you with ?</label>
+            <select class="form-control" name="topic">
+                  <option value="Work with us">I want to know more about your services</option>
+                  <option value="Request a demo">I want a no-obligation demo of your services</option>
+                  <option value="Employment query">I am interested in working for you</option>
+             </select>
+        </div>
+        ....
+        <div class="form-group callback">
+            <label for="time_callback">* What time should we call you back ?</label>
+            <select class="form-control" name="time_callback">
+                 <option value="Morning">Morning</option>
+                 <option value="Afternoon">Afternoon</option>
+                 <option value="Evening">Evening</option>
+            </select>
+        </div>
+        <div class="form-group upload">
+               <label for="send_cv">* Upload your CV</label>
+               <input type="file" name="send_cv" />
+        </div>
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
