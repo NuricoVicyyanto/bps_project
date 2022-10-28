@@ -12,6 +12,8 @@ use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\VotingController;
+use App\Http\Controllers\IncomingmailController;
+use App\Http\Controllers\OutgoingmailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,6 +68,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/acctask/{id}', [TableController::class, 'approve'])->name('acctask');
     Route::get('/ejtask/{id}', [TableController::class, 'ejject'])->name('ejtask');
+
+    // Mail
+    Route::get('/incomingmail', [IncomingmailController::class, 'index'])->name('incomingmail');
+    Route::get('/outgoingmail', [OutgoingmailController::class, 'index'])->name('outgoingmail');
 
 });
 

@@ -21,8 +21,25 @@
             <span>Dashboard</span></a>
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-paper-plane"></i>
+            <span>Surat</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Jenis Surat :</h6>
+                <a class="collapse-item" href="{{ url('incomingmail') }}">Surat Masuk</a>
+                <a class="collapse-item" href="{{ url('outgoingmail') }}">Surat Keluar</a>
+            </div>
+        </div>
+    </li>
+
 
     {{-- <!-- Nav Item - Pages Collapse Menu -->
     @if(Auth::user()->level == "admin")
