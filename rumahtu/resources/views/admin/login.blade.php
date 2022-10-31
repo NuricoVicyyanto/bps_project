@@ -12,8 +12,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
@@ -23,41 +22,52 @@
 </head>
 
 <body class="bg-gradient-light">
-        <section class="vh-100" style="background-color: hsl(220, 100%, 54%);">
+        <section style="background-color: hsl(220, 100%, 54%);">
             <div class="container py-5 h-100">
-              <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                  <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                    <div class="card-body p-5 ">
-                      <div class="text-center" >
-                        <img src="{{asset('assets/img/logo.png')}}"
-                          style="width: 185px;" alt="logo">
-                      </div>
-                      <h3 class="mb-4 text-center pt-4 font-weight-bold">Sign in</h3>
-                      <form action="{{ route('postlogin')}}" method="post">
-                        {{ csrf_field() }}
-                      <div class="form-outline mb-4 font-weight-bold">
-                        <input type="email" name="email" class="form-control" placeholder="Email">
-                        <label class="form-label" for="typeEmailX-2">Email</label>
-                      </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-10 col-lg-12 col-md-9">
+                        <div class="card o-hidden border-0 shadow-lg my-5">
+                            <div class="card-body p-0">
+                                <!-- Nested Row within Card Body -->
+                                <div class="row">
+                                    <div class="col-lg-6 d-none d-lg-block">
+                                        <img src="{{asset('assets/img/bg-login.jpg')}}"
+                                        style="width: 440px;">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="text-center" >
+                                            <img src="{{asset('assets/img/logo.png')}}"
+                                              style="width: 185px;" alt="logo" class="mt-4">
+                                          </div>
+                                          <h3 class="mb-4 text-center pt-4 font-weight-bold">Sign in</h3>
+                                        <div class="p-5">
+                                            <form action="{{ route('postlogin')}}" method="post">
+                                                {{ csrf_field() }}
+                                                <div class="form-outline mb-4 font-weight-bold">
+                                                    <input type="email" name="email" class="form-control" placeholder="Email">
+                                                    <label class="form-label" for="typeEmailX-2">Email</label>
+                                                </div>
 
-                      <div class="form-outline mb-4 font-weight-bold">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
-                        <label class="form-label" for="typePasswordX-2">Password</label>
-                      </div>
+                                                <div class="form-outline mb-4 font-weight-bold">
+                                                    <input type="password" name="password" class="form-control" placeholder="Password">
+                                                    <label class="form-label" for="typePasswordX-2">Password</label>
+                                                </div>
 
-                      <!-- Checkbox -->
-                      <div class="form-check d-flex justify-content-start mb-4">
-                        <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-                        <label class="form-check-label" for="form1Example3"> Remember password </label>
-                      </div>
+                                                <!-- Checkbox -->
+                                                <div class="form-check d-flex justify-content-start mb-4">
+                                                    <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                                                    <label class="form-check-label" for="form1Example3"> Remember password </label>
+                                                </div>
 
-                      <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-                    </form>
+                                                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
           </section>
     </div>

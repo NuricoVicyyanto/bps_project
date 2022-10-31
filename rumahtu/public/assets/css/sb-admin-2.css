@@ -171,9 +171,9 @@ select[multiple] {
 
   /*
    * Safari will not reveal an option
-   * unless the select height has room to 
+   * unless the select height has room to
    * show all of it
-   * Firefox and Chrome allow showing 
+   * Firefox and Chrome allow showing
    * a partial option
    */
   height: 6rem;
@@ -185,7 +185,7 @@ select[multiple] {
     outline-color: var(--select-focus);
   }
 
-  /* 
+  /*
    * Experimental - styling of selected options
    * in the multiselect
    * Not supported crossbrowser
@@ -11024,7 +11024,7 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
+  background: url("../rumahtu/public/assets/img/bg-login.jpg");
   background-position: center;
   background-size: cover;
 }
