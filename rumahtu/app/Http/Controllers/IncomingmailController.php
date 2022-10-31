@@ -75,7 +75,8 @@ class IncomingmailController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dok = Surmas::findorfail($id);
+        return view('#', compact('dok'));
     }
 
     /**
@@ -87,7 +88,24 @@ class IncomingmailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ubah = Surmas::findorfail($id);
+        $awal = $ubah->file;
+
+        $dt = [
+            'index' => $request['index'],
+            'date' => $request['date'],
+            'kode_surat' => $request['kode_surat'],
+            'alamat' => $request['alamat'],
+            'tanggal' => $request['tanggal'],
+            'perihal' => $request['perihal'],
+            'file' => $awal,
+
+            
+        ];
+
+        $request->gambar->move(public_path() . '/img', $awal);
+        $ubah->update($dt);
+        return redirect('dokumentasi');
     }
 
     /**
