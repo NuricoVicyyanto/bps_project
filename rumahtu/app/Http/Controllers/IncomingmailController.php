@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Surmas;
 
 
 class IncomingmailController extends Controller
@@ -37,7 +38,22 @@ class IncomingmailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nm = $request->file;
+        $namaFile = "http://127.0.0.1:8000/img/" . $nm->getClientOriginalName();
+
+        $dtUpload = new Surmas;
+        $dtUpload->index = $request->index;
+        $dtUpload->date = $request->date;
+        $dtUpload->kode_surat = $request->kode_surat;
+        $dtUpload->alamat = $request->alamat;
+        $dtUpload->tanggal = $request->tanggal;
+        $dtUpload->perihal = $request->perihal;
+        $dtUpload->file = $namaFile;
+
+        $nm->move(public_path() . '/img', $namaFile);
+        $dtUpload->save();
+
+        return redirect('incomingmail');
     }
 
     /**
@@ -82,7 +98,7 @@ class IncomingmailController extends Controller
      */
     public function destroy($id)
     {
-        $dok = Task::findorfail($id);
+        $dok = Surmas::findorfail($id);
         $file = public_path('/img/') . $dok->gambar;
 
         if (file_exists($file)) {
@@ -93,19 +109,19 @@ class IncomingmailController extends Controller
         return back();
     }
 
-    public function approve($id)
-    {
-        $leave = Task::findOrFail($id);
-        $leave->review = 'Approve'; //Approved
-        $leave->save();
-        return redirect()->back(); //Redirect user somewhere
-    }
+    // public function approve($id)
+    // {
+    //     $leave = Task::findOrFail($id);
+    //     $leave->review = 'Approve'; //Approved
+    //     $leave->save();
+    //     return redirect()->back(); //Redirect user somewhere
+    // }
 
-    public function ejject($id)
-    {
-        $leave = Task::findOrFail($id);
-        $leave->review = 'Rejected'; //Approved
-        $leave->save();
-        return redirect()->back(); //Redirect user somewhere
-    }
+    // public function ejject($id)
+    // {
+    //     $leave = Task::findOrFail($id);
+    //     $leave->review = 'Rejected'; //Approved
+    //     $leave->save();
+    //     return redirect()->back(); //Redirect user somewhere
+    // }
 }
