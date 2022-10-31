@@ -96,18 +96,18 @@ class IncomingmailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function destroy($id)
-    // {
-    //     $dok = Task::findorfail($id);
-    //     $file = public_path('/img/') . $dok->gambar;
+    public function destroy($id)
+    {
+        $dok = Surmas::findorfail($id);
+        $file = public_path('/img/') . $dok->gambar;
 
-    //     if (file_exists($file)) {
-    //         @unlink($file);
-    //     }
+        if (file_exists($file)) {
+            @unlink($file);
+        }
 
-    //     $dok->delete();
-    //     return back();
-    // }
+        $dok->delete();
+        return back();
+    }
 
     // public function approve($id)
     // {
