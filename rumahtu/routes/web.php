@@ -12,14 +12,9 @@ use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\VotingController;
-<<<<<<< Updated upstream
 use App\Http\Controllers\IncomingmailController;
 use App\Http\Controllers\OutgoingmailController;
-=======
 use App\Http\Controllers\ToolsController;
-
-
->>>>>>> Stashed changes
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,15 +70,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/acctask/{id}', [TableController::class, 'approve'])->name('acctask');
     Route::get('/ejtask/{id}', [TableController::class, 'ejject'])->name('ejtask');
 
-<<<<<<< Updated upstream
     // Mail
     Route::get('/incomingmail', [IncomingmailController::class, 'index'])->name('incomingmail');
     Route::get('/outgoingmail', [OutgoingmailController::class, 'index'])->name('outgoingmail');
-=======
+
     Route::get('/tools', [ToolsController::class, 'index'])->name('tools');
-
->>>>>>> Stashed changes
-
 });
 
 
