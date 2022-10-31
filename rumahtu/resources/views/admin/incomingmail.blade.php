@@ -13,7 +13,8 @@
     <div class="container-fluid">
         <!-- Updated border colors such as for an error state -->
 <!-- Add to .select ➡️ style="--select-border: red; --select-focus: red" -->
-<form>
+<form action="{{ route('simpansuratmasuk')}}" method="POST" enctype="multipart/form-data">
+    {{ csrf_field() }}
     <div class="form-group row">
                 
         <div class="col-sm-2">
@@ -21,8 +22,8 @@
           <input type="number" class="form-control" id="no" placeholder="No">
         </div>
         <div class="col-sm-3">
-            <label for="nama" class="col-form-label">Index</label>
-            <select class="custom-select">
+            <label for="nama" class="col-form-label" >Index</label>
+            <select  id="index" name="index" class="custom-select">
                 <option selected>Open this select menu</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -34,31 +35,32 @@
           </div>
           <div class="col-sm-3">
             <label for="nama" class="col-form-label">Bulan</label>
-            <input type="date" class="form-control" id="formGroupExampleInput" placeholder="Bulan">
+            <input type="date" class="form-control" id="date" name="date" placeholder="Bulan">
           </div>
           <div class="col-sm-4">
             <label for="nama" class="col-form-label">Kode Surat</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Kode Surat">
+            <input type="text" class="form-control" id="kode_surat" name="kode_surat" placeholder="Kode Surat">
           </div>
       </div>
     <div class="form-group">
         <label for="nama" class="col-form-label">Alamat</label>
-      <input type="text" class="form-control" id="alamat" placeholder="Alamat">
+      <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
     </div>
     <div class="form-group">
         <label for="nama" class="col-form-label">Tanggal</label>
-        <input type="date" class="form-control" id="perihal" placeholder="Perihal">
+        <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="Perihal">
       </div>
     <div class="form-group">
         <label for="nama" class="col-form-label">Perihal</label>
-        <input type="text-area" class="form-control" id="perihal" placeholder="Perihal">
+        <input type="text-area" class="form-control" id="perihal" name="perihal" placeholder="Perihal">
       </div>
       <div class="form-group">
         <label for="nama" class="col-form-label">Upload Surat Masuk</label>
     <div class="custom-file mb-2">
-      <input type="file" class="custom-file-input" id="customFile">
-      <label class="custom-file-label" for="customFile">Surat Masuk</label>
+        <input type="file" name="file" id="file" name="file">
+      {{-- <label class="custom-file-label" for="customFile">Surat Masuk</label> --}}
     </div>
+    <button type="submit" class="btn btn-primary">Add</button>
 </div>
   </form>
           
@@ -84,26 +86,29 @@
 
                             </tr>
                         </thead>
+                        @foreach ($dtsuratmasuk as $item)
                         <tbody>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>Januari</td>
-                            <td>190</td>
-                            <td>Pakuniran</td>
-                            <td>19-jan-2010</td>
-                            <td>Undangan</td>
-                            <td>File Surat</td>
+                            <td></td>
+                            <td>{{ $item->index }}</td>
+                            <td>{{ $item->date }}</td>
+                            <td>{{ $item->kode_surat }}</td>
+                            <td>{{ $item->alamat }}</td>
+                            <td>{{ $item->tanggal }}</td>
+                            <td>{{ $item->perihal }}</td>
+                            <td><a href="{{ asset($item->file)}}" target="blank" rel="noopener oreferrer">Lihat Gambar</a></td>
                             <td>
-                                <a href="" type="button"
+                                <a href="{{ url('editsuratmasuk', $item->id) }}" type="button" class="btn btn-warning"
+                                data-toggle="edit-atas" data-placement="right" title="Edit data"><i
+                                    class="fas fa-pen"></i></a>
+                                <a href="{{ url('hapussuratmasuk', $item->id) }}" type="button"
                                     class="btn btn-danger" data-toggle="edit-atas" data-placement="right"
                                     title="Hapus data"><i class="fas fa-trash-alt"></i></a>
-                                <a href="" type="button" class="btn btn-warning"
-                                    data-toggle="edit-atas" data-placement="right" title="Tolak data"><i
-                                        class="fas fa-times"></i></a>
-                                <a href="" type="button" class="btn btn-success"
+
+                                {{-- <a href="" type="button" class="btn btn-warning"
                                     data-toggle="edit-atas" data-placement="right" title="Approve data"><i
-                                        class="fas fa-check"></i></a>
+                                        class="fas fa-check"></i></a> --}}
                             </td>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

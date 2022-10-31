@@ -70,8 +70,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/acctask/{id}', [TableController::class, 'approve'])->name('acctask');
     Route::get('/ejtask/{id}', [TableController::class, 'ejject'])->name('ejtask');
 
-    // Mail
+    // Suratmasuk
     Route::get('/incomingmail', [IncomingmailController::class, 'index'])->name('incomingmail');
+    Route::post('/simpansuratmasuk', [IncomingmailController::class, 'store'])->name('simpansuratmasuk');
+    Route::get('/hapussuratmasuk/{id}', [IncomingmailController::class, 'destroy'])->name('hapussuratmasuk');
+    Route::get('/editsuratmasuk/{id}', [IncomingmailController::class, 'edit'])->name('editsuratmasuk');
+    Route::get('/updatesuratmasuk/{id}', [IncomingmailController::class, 'update'])->name('updatesuratmasuk');
+
+
+
     Route::get('/outgoingmail', [OutgoingmailController::class, 'index'])->name('outgoingmail');
 
     Route::get('/tools', [ToolsController::class, 'index'])->name('tools');
