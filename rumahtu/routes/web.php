@@ -86,6 +86,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/updatesuratkeluar/{id}', [OutgoingmailController::class, 'update'])->name('updatesuratkeluar');
 
     Route::get('/tools', [ToolsController::class, 'index'])->name('tools');
+    
 });
 
 

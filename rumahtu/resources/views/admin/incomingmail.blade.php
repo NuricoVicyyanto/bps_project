@@ -1,14 +1,14 @@
 @extends('admin.dashboard')
 @section('content')
-<!-- Breadcrumb -->
-<nav aria-label="breadcrumb" class="main-breadcrumb">
-    <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Surat</a></li>
-    {{-- <li class="breadcrumb-item"><a href="javascript:void(0)">Surat Keluar</a></li> --}}
-    <li class="breadcrumb-item active" aria-current="page">Surat Masuk</li>
-    </ol>
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="main-breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Surat</a></li>
+            {{-- <li class="breadcrumb-item"><a href="javascript:void(0)">Surat Keluar</a></li> --}}
+            <li class="breadcrumb-item active" aria-current="page">Surat Masuk</li>
+        </ol>
     </nav>
-<!-- /Breadcrumb -->
+    <!-- /Breadcrumb -->
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- Updated border colors such as for an error state -->
@@ -60,7 +60,6 @@
         <input type="file" name="file" id="file" name="file">
       {{-- <label class="custom-file-label" for="customFile">Surat Masuk</label> --}}
     </div>
-    
     <button type="submit" class="btn btn-primary">Add</button>
 </div>
   </form>
@@ -101,17 +100,15 @@
                                 <a href="{{ url('editsuratmasuk', $item->id) }}" type="button" class="btn btn-warning"
                                 data-toggle="edit-atas" data-placement="right" title="Edit data"><i
                                     class="fas fa-pen"></i></a>
-
-
                                 <a href="{{ url('hapussuratmasuk', $item->id) }}" type="button"
                                     class="btn btn-danger" data-toggle="edit-atas" data-placement="right"
                                     title="Hapus data"><i class="fas fa-trash-alt"></i></a>
 
-                                {{-- <a href="" type="button" class="btn btn-warning"
+                                    {{-- <a href="" type="button" class="btn btn-warning"
                                     data-toggle="edit-atas" data-placement="right" title="Approve data"><i
                                         class="fas fa-check"></i></a> --}}
-                            </td>
-                            @endforeach
+                                </td>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
