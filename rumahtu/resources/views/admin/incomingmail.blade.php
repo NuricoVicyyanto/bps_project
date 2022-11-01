@@ -60,6 +60,7 @@
         <input type="file" name="file" id="file" name="file">
       {{-- <label class="custom-file-label" for="customFile">Surat Masuk</label> --}}
     </div>
+    
     <button type="submit" class="btn btn-primary">Add</button>
 </div>
   </form>
@@ -100,6 +101,8 @@
                                 <a href="{{ url('editsuratmasuk', $item->id) }}" type="button" class="btn btn-warning"
                                 data-toggle="edit-atas" data-placement="right" title="Edit data"><i
                                     class="fas fa-pen"></i></a>
+
+
                                 <a href="{{ url('hapussuratmasuk', $item->id) }}" type="button"
                                     class="btn btn-danger" data-toggle="edit-atas" data-placement="right"
                                     title="Hapus data"><i class="fas fa-trash-alt"></i></a>

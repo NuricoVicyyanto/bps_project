@@ -75,7 +75,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/simpansuratmasuk', [IncomingmailController::class, 'store'])->name('simpansuratmasuk');
     Route::get('/hapussuratmasuk/{id}', [IncomingmailController::class, 'destroy'])->name('hapussuratmasuk');
     Route::get('/editsuratmasuk/{id}', [IncomingmailController::class, 'edit'])->name('editsuratmasuk');
-    Route::get('/updatesuratmasuk/{id}', [IncomingmailController::class, 'update'])->name('updatesuratmasuk');
+    Route::post('/updatesuratmasuk/{id}', [IncomingmailController::class, 'update'])->name('updatesuratmasuk');
 
 
 
