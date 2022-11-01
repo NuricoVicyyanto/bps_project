@@ -80,6 +80,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::get('/outgoingmail', [OutgoingmailController::class, 'index'])->name('outgoingmail');
+    Route::post('/simpansuratkeluar', [OutgoingmailController::class, 'store'])->name('simpansuratkeluar');
+    Route::get('/hapussuratkeluar/{id}', [OutgoingmailController::class, 'destroy'])->name('hapussuratkeluar');
+    Route::get('/editsuratkeluar/{id}', [OutgoingmailController::class, 'edit'])->name('editsuratkeluar');
+    Route::get('/updatesuratkeluar/{id}', [OutgoingmailController::class, 'update'])->name('updatesuratkeluar');
 
     Route::get('/tools', [ToolsController::class, 'index'])->name('tools');
 });

@@ -15,7 +15,8 @@ class OutgoingmailController extends Controller
      */
     public function index()
     {
-        return view('admin.outgoingmail');
+        $dtsuratkeluar = Surkel::latest()->get();
+        return view('admin.outgoingmail', compact('dtsuratkeluar'));
     }
 
     /**
@@ -37,7 +38,7 @@ class OutgoingmailController extends Controller
     public function store(Request $request)
     {
         $nm = $request->file;
-        $namaFile = "http://127.0.0.1:8000/img/" . $nm->getClientOriginalName();
+        $namaFile = "http://127.0.0.1:8000/img/suratkeluar_" . $nm->getClientOriginalName();
 
         $dtUpload = new Surkel;
         $dtUpload->index = $request->index;
@@ -85,7 +86,24 @@ class OutgoingmailController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ubah = Surkel::findorfail($id);
+        $awal = $ubah->file;
+
+        $dt = [
+            'index' => $request['index'],
+            'date' => $request['date'],
+            'kode_surat' => $request['kode_surat'],
+            'alamat' => $request['alamat'],
+            'tanggal' => $request['tanggal'],
+            'perihal' => $request['perihal'],
+            'file' => $awal,
+
+
+        ];
+
+        $request->gambar->move(public_path() . '/img', $awal);
+        $ubah->update($dt);
+        return redirect('dokumentasi');
     }
 
     /**
