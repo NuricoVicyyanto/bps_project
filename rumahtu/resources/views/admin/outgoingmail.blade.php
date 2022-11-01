@@ -11,10 +11,11 @@
 <!-- /Breadcrumb -->
     <!-- Begin Page Content -->
 
-        <form>
+        <form action="{{ route('simpansuratkeluar')}}" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
             <div class="container-fluid">
             <div class="form-group row">
-                
+
                 <div class="col-sm-2">
                     <label for="nama" class="col-form-label">NO</label>
                   <input type="number" class="form-control" id="no" placeholder="No">
@@ -51,9 +52,17 @@
             <div class="form-group">
                 <label for="nama" class="col-form-label">Perihal</label>
                 <input type="text-area" class="form-control" id="perihal" placeholder="Perihal">
-              </div>
-          </form>
-          
+            </div>
+            <div class="form-group">
+                <label for="nama" class="col-form-label">Upload Surat Masuk</label>
+            <div class="custom-file mb-2">
+                <input type="file" name="file" id="file" name="file">
+              {{-- <label class="custom-file-label" for="customFile">Surat Masuk</label> --}}
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+        </form>
+
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -71,18 +80,21 @@
                                 <th>Alamat</th>
                                 <th>Tanggal</th>
                                 <th>Perihal</th>
+                                <th>File</th>
                                 <th>Aksi</th>
 
                             </tr>
                         </thead>
+                        @foreach ($dtsuratkeluar as $item)
                         <tbody>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>Januari</td>
-                            <td>190</td>
-                            <td>Pakuniran</td>
-                            <td>19-jan-2010</td>
-                            <td>Undangan</td>
+                            <td></td>
+                            <td>{{ $item->index }}</td>
+                            <td>{{ $item->date }}</td>
+                            <td>{{ $item->kode_surat }}</td>
+                            <td>{{ $item->alamat }}</td>
+                            <td>{{ $item->tanggal }}</td>
+                            <td>{{ $item->perihal }}</td>
+                            <td><a href="{{ asset($item->file)}}" target="blank" rel="noopener oreferrer">Lihat Gambar</a></td>
                             <td>
                                 <a href="" type="button"
                                     class="btn btn-danger" data-toggle="edit-atas" data-placement="right"
@@ -94,7 +106,7 @@
                                     data-toggle="edit-atas" data-placement="right" title="Approve data"><i
                                         class="fas fa-check"></i></a>
                             </td>
-
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

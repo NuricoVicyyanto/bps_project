@@ -106,7 +106,7 @@ class IncomingmailController extends Controller
 
         $request->gambar->move(public_path() . '/img', $awal);
         $ubah->update($dt);
-        return redirect('dokumentasi');
+        return redirect('incomingmail');
     }
 
     /**
