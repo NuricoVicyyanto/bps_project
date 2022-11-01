@@ -32,7 +32,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 d-none d-lg-block">
                                         <img src="{{asset('assets/img/bg-login.jpg')}}"
-                                        style="width: 440px;">
+                                        style="width: 440px; filter:brightness(0.60);">
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="text-center" >
