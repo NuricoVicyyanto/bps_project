@@ -44,12 +44,12 @@
                                             <form action="{{ route('postlogin')}}" method="post">
                                                 {{ csrf_field() }}
                                                 <div class="form-outline mb-4 font-weight-bold">
-                                                    <input type="email" name="email" class="form-control" placeholder="Email">
+                                                    <input type="email" name="email" class="form-control shadow-sm" placeholder="Email">
                                                     <label class="form-label" for="typeEmailX-2">Email</label>
                                                 </div>
 
                                                 <div class="form-outline mb-4 font-weight-bold">
-                                                    <input type="password" name="password" class="form-control" placeholder="Password">
+                                                    <input type="password" name="password" class="form-control shadow-sm" placeholder="Password">
                                                     <label class="form-label" for="typePasswordX-2">Password</label>
                                                 </div>
 
@@ -59,7 +59,7 @@
                                                     <label class="form-check-label" for="form1Example3"> Remember password </label>
                                                 </div>
 
-                                                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                                                <button class="btn btn-primary btn-lg btn-block shadow-sm" type="submit">Login</button>
                                             </form>
                                         </div>
                                     </div>
