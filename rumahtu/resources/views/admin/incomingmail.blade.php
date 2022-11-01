@@ -15,10 +15,10 @@
 <!-- Add to .select ➡️ style="--select-border: red; --select-focus: red" -->
 <p>
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-      Edit Data
+      Tambah Data
     </button>
   </p>
-  <div class="collapse" id="collapseExample">
+  <div class="collapse mb-3" id="collapseExample">
     <div class="card card-body">
         <form action="{{ route('simpansuratmasuk')}}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
