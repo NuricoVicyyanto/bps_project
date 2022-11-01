@@ -15,7 +15,7 @@
         <p>
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
                 aria-expanded="false" aria-controls="collapseExample">
-                Tambah Data
+                Tambah Data <i class="fas fa-plus"></i>
             </button>
         </p>
         <div class="collapse mb-3" id="collapseExample">
