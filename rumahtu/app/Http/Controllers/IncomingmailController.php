@@ -143,8 +143,8 @@ class IncomingmailController extends Controller
     //     $leave->save();
     //     return redirect()->back(); //Redirect user somewhere
     // }
-    
 
-    
+
+
 }
 
