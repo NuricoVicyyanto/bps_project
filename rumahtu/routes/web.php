@@ -82,6 +82,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/outgoingmail', [OutgoingmailController::class, 'index'])->name('outgoingmail');
 
     Route::get('/tools', [ToolsController::class, 'index'])->name('tools');
+    
 });
 
 
