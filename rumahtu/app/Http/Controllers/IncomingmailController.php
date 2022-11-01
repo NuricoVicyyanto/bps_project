@@ -16,7 +16,8 @@ class IncomingmailController extends Controller
     public function index()
     {
 
-            return view('admin.incomingmail');
+        $dtsuratmasuk = Surmas::latest()->get();
+        return view('admin.incomingmail', compact('dtsuratmasuk'));
 
     }
 
@@ -39,7 +40,7 @@ class IncomingmailController extends Controller
     public function store(Request $request)
     {
         $nm = $request->file;
-        $namaFile = "http://127.0.0.1:8000/img/" . $nm->getClientOriginalName();
+        $namaFile = "http://127.0.0.1:8000/img/suratmasuk_" . $nm->getClientOriginalName();
 
         $dtUpload = new Surmas;
         $dtUpload->index = $request->index;
@@ -76,7 +77,7 @@ class IncomingmailController extends Controller
     public function edit($id)
     {
         $dok = Surmas::findorfail($id);
-        return view('#', compact('dok'));
+        return view('admin.editincomingmail', compact('dok'));
     }
 
     /**
@@ -100,7 +101,7 @@ class IncomingmailController extends Controller
             'perihal' => $request['perihal'],
             'file' => $awal,
 
-            
+
         ];
 
         $request->gambar->move(public_path() . '/img', $awal);
@@ -117,14 +118,14 @@ class IncomingmailController extends Controller
     public function destroy($id)
     {
         $dok = Surmas::findorfail($id);
-        $file = public_path('/img/') . $dok->gambar;
+        $file = public_path('/img') . $dok->file;
 
         if (file_exists($file)) {
-            @unlink($file);
+            unlink($file);
         }
 
         $dok->delete();
-        return back();
+        return redirect('incomingmail')->with('success','Data telah dihapus.');
     }
 
     // public function approve($id)
@@ -142,4 +143,8 @@ class IncomingmailController extends Controller
     //     $leave->save();
     //     return redirect()->back(); //Redirect user somewhere
     // }
+    
+
+    
 }
+
