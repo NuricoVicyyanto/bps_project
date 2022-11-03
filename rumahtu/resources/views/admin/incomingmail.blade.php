@@ -23,7 +23,7 @@
         <form action="{{ route('simpansuratmasuk')}}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group row">
-                        
+
                 <div class="col-sm-2">
                     <label for="nama" class="col-form-label">NO</label>
                   <input type="number" class="form-control" id="no" placeholder="No">
@@ -73,7 +73,7 @@
     </div>
   </div>
 
-          
+
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -117,7 +117,7 @@
                                     {{-- <a href="" type="button" class="btn btn-warning"
                                     data-toggle="edit-atas" data-placement="right" title="Approve data"><i
                                         class="fas fa-check"></i></a> --}}
-                                </td>
+                            </td>
                         @endforeach
                         </tbody>
                     </table>
