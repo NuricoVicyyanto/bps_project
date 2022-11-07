@@ -74,7 +74,8 @@ class OutgoingmailController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dok = Surkel::findorfail($id);
+        return view('admin.editoutgoingmail', compact('dok'));
     }
 
     /**
@@ -103,7 +104,7 @@ class OutgoingmailController extends Controller
 
         $request->gambar->move(public_path() . '/img', $awal);
         $ubah->update($dt);
-        return redirect('dokumentasi');
+        return redirect('outgoingmail');
     }
 
     /**
