@@ -1,92 +1,97 @@
 @extends('admin.dashboard')
 @section('content')
-    {{-- <link rel="stylesheet" type="text/css" href="https://rawgit.com/mastamvan/backup/ButtonPack/style-button4.css" />
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
+    <section class="wrapper">
+        <div class="container-fostrap">
+            <div>
+                <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png"
+                    class="fostrap-logo" />
+                <h1 class="heading">
+                    Bootstrap Card Responsive
+                </h1>
+            </div>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="card">
+                                <a class="img-card"
+                                    href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                                    <img
+                                        src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" />
+                                </a>
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                                            Bootstrap 3 Carousel FadeIn Out Effect
+                                        </a>
+                                    </h4>
+                                    <p class="">
+                                        Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
+                                    </p>
+                                </div>
+                                <div class="card-read-more">
+                                    <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"
+                                        class="btn btn-link btn-block">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="card">
+                                <a class="img-card"
+                                    href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                    <img
+                                        src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                                </a>
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <a
+                                            href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html">
+                                            Material Design Responsive Menu
+                                        </a>
+                                    </h4>
+                                    <p class="">
+                                        Material Design is a visual programming language made by Google. Language
+                                        programming...
+                                    </p>
+                                </div>
+                                <div class="card-read-more">
+                                    <a href="https://codepen.io/wisnust10/full/ZWERZK/" class="btn btn-link btn-block">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="card">
+                                <a class="img-card"
+                                    href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                    <img
+                                        src="https://4.bp.blogspot.com/-TDIJ17DfCco/Vtneyc-0t4I/AAAAAAAABmk/aa4AjmCvRck/s1600/cover.jpg" />
+                                </a>
+                                <div class="card-content">
+                                    <h4 class="card-title">
+                                        <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">5
+                                            Button Hover Animation Effects
+                                        </a>
+                                    </h4>
+                                    <p class="">
+                                        tutorials button hover animation, although very much a hover button is very
+                                        beauti...
+                                    </p>
+                                </div>
+                                <div class="card-read-more">
+                                    <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html"
+                                        class="btn btn-link btn-block">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div> --}}
-
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
-<div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>
-            <a href="#" class="btn btn-sq-lg btn-primary">
-                <i class="fa fa-user fa-5x"></i><br/>
-                Demo Primary <br>Button
-            </a>
-            <a href="#" class="btn btn-sq-lg btn-success">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Success <br>Button
-            </a>
-            <a href="#" class="btn btn-sq-lg btn-info">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Info <br>Button
-            </a>
-            <a href="#" class="btn btn-sq-lg btn-warning">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Warning <br>Button
-            </a>
-            <a href="#" class="btn btn-sq-lg btn-danger">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Danger <br>Button
-            </a>
-            <a href="#" class="btn btn-sq-lg btn-danger">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Danger <br>Button
-            </a>
-           <a href="#" class="btn btn-sq-lg btn-danger">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Danger <br>Button
-            </a>
-          </p>
-        </div>
-	</div>
-    <style>
-        .btn-sq-lg {
-        width: 150px !important;
-        height: 150px !important;
-        }
-
-        .btn-sq {
-        width: 100px !important;
-        height: 100px !important;
-        font-size: 10px;
-        }
-
-        .btn-sq-sm {
-        width: 50px !important;
-        height: 50px !important;
-        font-size: 10px;
-        }
-
-        .btn-sq-xs {
-        width: 25px !important;
-        height: 25px !important;
-        padding:2px;
-        }
-    </style>
-</div>
+    </section>
 @endsection
