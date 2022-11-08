@@ -4,8 +4,6 @@
 <div class="hold-transition register-page">
     <div class="register-box">
 
-      <div class="card">
-        <div class="card-body register-card-body m-4">
 
           <form action="{{ route('simpantask')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
@@ -46,9 +44,5 @@
 
       </div>
       <!-- /.form-box -->
-    </div><!-- /.card -->
-    <!-- /.register-box -->
-
-  </div>
 
 @endsection

@@ -15,8 +15,8 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        $count = DB::table('users')->count();
-        return view('admin.homepage', compact('count'));
+        $countUser = DB::table('users')->count();
+        return view('admin.homepage', compact('countUser'));
     }
 
     /**

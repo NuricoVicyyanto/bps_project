@@ -76,7 +76,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Jumlah Pegawai</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{!! $count !!}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{!! $countUser !!}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-user fa-2x text-gray-300"></i>
