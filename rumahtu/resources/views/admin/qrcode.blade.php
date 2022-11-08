@@ -10,8 +10,8 @@
                     <form class="form-inline" action="{{ route('store') }}" method="POST">
                         @csrf
                         <div class="form-group mb-2">
-                            <input type="text" class="form-control" name="title" placeholder="Masukkan Teks">
-                            <input type="text" class="form-control" name="name" placeholder="Masukkan Teks">
+                            <input type="text" required class="form-control" name="title" placeholder="Masukkan Teks">
+                            <input type="text" required class="form-control" name="name" placeholder="Masukkan Teks">
                         </div>
                         <button type="submit" class="btn btn-primary ml-1 mb-2">Create</button>
                     </form>
