@@ -27,11 +27,11 @@
 
                             <div class="col-sm-2">
                                 <label for="nama" class="col-form-label">NO</label>
-                                <input type="number" class="form-control" id="no" name="on" placeholder="No">
+                                <input type="number" required class="form-control" id="no" name="on" placeholder="No">
                             </div>
                             <div class="col-sm-3">
                                 <label for="nama" class="col-form-label">Index</label>
-                                <select class="custom-select" name="index" id="index">
+                                <select class="custom-select" required name="index" id="index">
                                     <option selected>Open this select menu</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -43,32 +43,32 @@
                             </div>
                             <div class="col-sm-3">
                                 <label for="nama" class="col-form-label">Bulan</label>
-                                <input type="date" class="form-control" id="date" name="date"
+                                <input type="date" class="form-control" required id="date" name="date"
                                     placeholder="Bulan">
                             </div>
                             <div class="col-sm-4">
                                 <label for="nama" class="col-form-label">Kode Surat</label>
-                                <input type="text" class="form-control" id="kode_surat" name="kode_surat"
+                                <input type="text" class="form-control" required id="kode_surat" name="kode_surat"
                                     placeholder="Kode Surat">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="nama" class="col-form-label">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
+                            <input type="text" class="form-control" id="alamat" required name="alamat" placeholder="Alamat">
                         </div>
                         <div class="form-group">
                             <label for="nama" class="col-form-label">Tanggal</label>
-                            <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="Perihal">
+                            <input type="date" class="form-control" id="tanggal" required name="tanggal" placeholder="Perihal">
                         </div>
                         <div class="form-group">
                             <label for="nama" class="col-form-label">Perihal</label>
-                            <input type="text-area" class="form-control" id="perihal" name="perihal"
+                            <input type="text-area" class="form-control" required id="perihal" name="perihal"
                                 placeholder="Perihal">
                         </div>
                         <div class="form-group">
                             <label for="nama" class="col-form-label">Upload Surat Masuk</label>
                             <div class="custom-file mb-2">
-                                <input type="file" name="file" id="file" name="file">
+                                <input type="file" name="file" id="file" name="file" required>
                                 {{-- <label class="custom-file-label" for="customFile">Surat Masuk</label> --}}
                             </div>
                             <button type="submit" class="btn btn-primary">Add</button>
