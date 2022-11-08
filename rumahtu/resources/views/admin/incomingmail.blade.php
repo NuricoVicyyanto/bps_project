@@ -25,12 +25,12 @@
             <div class="form-group row">
 
                 <div class="col-sm-2">
-                    <label for="nama" class="col-form-label">NO</label>
-                  <input type="number" class="form-control" id="no" placeholder="No">
+                    <label for="nama"  class="col-form-label">NO</label>
+                  <input type="number" required class="form-control" id="no" placeholder="No">
                 </div>
                 <div class="col-sm-3">
                     <label for="nama" class="col-form-label" >Index</label>
-                    <select  id="index" name="index" class="custom-select">
+                    <select  id="index"required name="index" class="custom-select">
                         <option selected>Open this select menu</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -42,29 +42,29 @@
                   </div>
                   <div class="col-sm-3">
                     <label for="nama" class="col-form-label">Bulan</label>
-                    <input type="date" class="form-control" id="date" name="date" placeholder="Bulan">
+                    <input type="date" required class="form-control" id="date" name="date" placeholder="Bulan">
                   </div>
                   <div class="col-sm-4">
                     <label for="nama" class="col-form-label">Kode Surat</label>
-                    <input type="text" class="form-control" id="kode_surat" name="kode_surat" placeholder="Kode Surat">
+                    <input type="text" required class="form-control" id="kode_surat" name="kode_surat" placeholder="Kode Surat">
                   </div>
               </div>
             <div class="form-group">
                 <label for="nama" class="col-form-label">Alamat</label>
-              <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
+              <input type="text" required class="form-control" id="alamat" name="alamat" placeholder="Alamat">
             </div>
             <div class="form-group">
                 <label for="nama" class="col-form-label">Tanggal</label>
-                <input type="date" class="form-control" id="tanggal" name="tanggal" placeholder="Perihal">
+                <input type="date" required class="form-control" id="tanggal" name="tanggal" placeholder="Perihal">
               </div>
             <div class="form-group">
                 <label for="nama" class="col-form-label">Perihal</label>
-                <input type="text-area" class="form-control" id="perihal" name="perihal" placeholder="Perihal">
+                <input type="text-area" required class="form-control" id="perihal" name="perihal" placeholder="Perihal">
               </div>
               <div class="form-group">
                 <label for="nama" class="col-form-label">Upload Surat Masuk</label>
             <div class="custom-file mb-2">
-                <input type="file" name="file" id="file" name="file">
+                <input type="file" required name="file" id="file" name="file">
               {{-- <label class="custom-file-label" for="customFile">Surat Masuk</label> --}}
             </div>
             <button type="submit" class="btn btn-primary">Add</button>
