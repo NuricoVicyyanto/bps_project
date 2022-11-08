@@ -2,13 +2,6 @@
 @section('content')
     <section class="wrapper">
         <div class="container-fostrap">
-            <div>
-                <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png"
-                    class="fostrap-logo" />
-                <h1 class="heading">
-                    Bootstrap Card Responsive
-                </h1>
-            </div>
             <div class="content">
                 <div class="container">
                     <div class="row">
