@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <!-- Updated border colors such as for an error state -->
 <!-- Add to .select ➡️ style="--select-border: red; --select-focus: red" -->
-<form action="{{ url('updatesuratmasuk',$dok->id)}}" method="post" enctype="multipart/form-data">
+<form action="{{ url('updatesuratkeluar',$dok->id)}}" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="form-group row">
 
