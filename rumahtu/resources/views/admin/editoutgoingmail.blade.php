@@ -55,7 +55,7 @@
         <input type="text-area" required class="form-control" id="perihal" name="perihal" placeholder="Perihal" value="{{ $dok->perihal}}">
       </div>
       <div class="form-group">
-        <input name="gambar" required type="file" id="gambar" required>
+        <input name="gambar" required type="file" id="gambar">
       </div>
       <div class="form-group">
         {{-- <img src="{{ asset('img/'. $inf->gambar)}}" height="10%" width="50%" alt=""> --}}
