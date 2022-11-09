@@ -49,7 +49,7 @@
                         <div class="row">
 
                             @foreach ($dtTools as $item)
-                                <div class="col-xs-12 col-sm-4">
+                                {{-- <div class="col-xs-12 col-sm-4">
                                     <div class="card">
                                         <a class="img-card" href="{{ $item->link }}">
                                             <img src="{{ $item->image }}" />
@@ -67,7 +67,12 @@
                                             </a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
+                                <a href="{{ $item->link }}" class="btn btn-sq-lg btn-danger m-1" target="blank_">
+                                    <img src="{{ $item->image }}" />
+                                    <p>{{ $item->title }}</p>
+                                </a>
+
                             @endforeach
 
                         </div>
@@ -75,4 +80,16 @@
                 </div>
             </div>
         </section>
+        <style>
+           .btn-sq-lg {
+                width: 200px !important;
+                height: 200px !important;
+            }
+            .btn-sq-lg img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                padding-top: 30px;
+            }
+        </style>
     @endsection
