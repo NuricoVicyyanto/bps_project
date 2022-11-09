@@ -1,92 +1,78 @@
 @extends('admin.dashboard')
 @section('content')
-    {{-- <link rel="stylesheet" type="text/css" href="https://rawgit.com/mastamvan/backup/ButtonPack/style-button4.css" />
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
-                <button type="button" class="btn btn-labeled btn-primary">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Camera</button>
+    @if (auth()->user()->level == 'admin')
+        <div class="container-fluid">
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Tambah Data <i class="fas fa-plus"></i>
+                </button>
+            </p>
+            <div class="collapse mb-3" id="collapseExample">
+                <div class="card card-body">
+                    <form action="{{ route('simpantools') }}" method="POST" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <div class="container-fluid">
+                            <div class="form-group row">
+                                <div class="form-group">
+                                    <label for="title" class="col-form-label">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title"
+                                        placeholder="Title">
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="title" class="col-form-label">Link</label>
+                                    <input type="text" class="form-control" id="link" name="link"
+                                        placeholder="Link">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nama" class="col-form-label">Upload Image</label>
+                                    <div class="custom-file mb-2">
+                                        <input type="file" id="image" name="image">
+                                        {{-- <label class="custom-file-label" for="customFile">Surat Masuk</label> --}}
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Add</button>
+                                </div>
+                            </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div> --}}
+        @else
+        @endif
 
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-<div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>
-            <a href="#" class="btn btn-sq-lg btn-primary">
-                <i class="fa fa-user fa-5x"></i><br/>
-                Demo Primary <br>Button
-            </a>
-            <a href="#" class="btn btn-sq-lg btn-success">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Success <br>Button
-            </a>
-            <a href="#" class="btn btn-sq-lg btn-info">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Info <br>Button
-            </a>
-            <a href="#" class="btn btn-sq-lg btn-warning">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Warning <br>Button
-            </a>
-            <a href="#" class="btn btn-sq-lg btn-danger">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Danger <br>Button
-            </a>
-            <a href="#" class="btn btn-sq-lg btn-danger">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Danger <br>Button
-            </a>
-           <a href="#" class="btn btn-sq-lg btn-danger">
-              <i class="fa fa-user fa-5x"></i><br/>
-              Demo Danger <br>Button
-            </a>
-          </p>
-        </div>
-	</div>
-    <style>
-        .btn-sq-lg {
-        width: 150px !important;
-        height: 150px !important;
-        }
+        <section class="wrapper">
+            <div class="container-fostrap">
+                <div class="content">
+                    <div class="container">
+                        <div class="row">
 
-        .btn-sq {
-        width: 100px !important;
-        height: 100px !important;
-        font-size: 10px;
-        }
+                            @foreach ($dtTools as $item)
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="card">
+                                        <a class="img-card" href="{{ $item->link }}">
+                                            <img src="{{ $item->image }}" />
+                                        </a>
+                                        <div class="card-content">
+                                            <h4 class="card-title">
+                                                <a href="{{ $item->link }}">
+                                                    {{ $item->title }}
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div class="card-read-more">
+                                            <a href="{{ $item->link }}" class="btn btn-link btn-block">
+                                                Open
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
 
-        .btn-sq-sm {
-        width: 50px !important;
-        height: 50px !important;
-        font-size: 10px;
-        }
-
-        .btn-sq-xs {
-        width: 25px !important;
-        height: 25px !important;
-        padding:2px;
-        }
-    </style>
-</div>
-@endsection
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endsection

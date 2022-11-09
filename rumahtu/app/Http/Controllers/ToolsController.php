@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tools;
 
 class ToolsController extends Controller
 {
@@ -13,7 +14,8 @@ class ToolsController extends Controller
      */
     public function index()
     {
-        return view('admin.tools');
+        $dtTools = Tools::all();
+        return view('admin.tools', compact('dtTools'));
     }
 
     /**
@@ -34,7 +36,18 @@ class ToolsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nm = $request->image;
+        $namaFile = "http://127.0.0.1:8000/img/tools_" . $nm->getClientOriginalName();
+
+        $dtUpload = new Tools;
+        $dtUpload->title = $request->title;
+        $dtUpload->link = $request->link;
+        $dtUpload->image = $namaFile;
+
+        $nm->move(public_path() . '/img', $namaFile);
+        $dtUpload->save();
+
+        return redirect('tools');
     }
 
     /**
