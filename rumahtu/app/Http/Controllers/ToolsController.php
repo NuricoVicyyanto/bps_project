@@ -14,6 +14,7 @@ class ToolsController extends Controller
      */
     public function index()
     {
+
         $dtTools = Tools::all();
         return view('admin.tools', compact('dtTools'));
     }
