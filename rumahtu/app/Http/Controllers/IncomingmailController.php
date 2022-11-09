@@ -54,7 +54,7 @@ class IncomingmailController extends Controller
         $nm->move(public_path() . '/img', $namaFile);
         $dtUpload->save();
 
-        return redirect('incomingmail');
+        return redirect('incomingmail')->with('success', 'Surat Masuk Created Successfully!');
     }
 
     /**
@@ -125,7 +125,7 @@ class IncomingmailController extends Controller
         }
 
         $dok->delete();
-        return redirect('incomingmail')->with('success','Data telah dihapus.');
+        return redirect('incomingmail')->with('success', 'Surat Masuk Deleted Successfully!');
     }
 
     // public function approve($id)
