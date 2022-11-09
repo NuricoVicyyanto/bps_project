@@ -95,6 +95,6 @@ class QrController extends Controller
     {
         $peng = Qr::findorfail($id);
         $peng->delete();
-        return redirect('qrcode');
+        return redirect('qrcode')->with('success', 'Qr Successfully Deleted!');
     }
 }

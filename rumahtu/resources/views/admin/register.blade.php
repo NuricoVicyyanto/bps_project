@@ -106,4 +106,5 @@
   <!-- /.register-box -->
 
 </div>
+
 @endsection

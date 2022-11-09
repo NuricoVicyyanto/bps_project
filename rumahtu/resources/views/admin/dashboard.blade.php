@@ -60,6 +60,7 @@
 
             </div>
             <!-- End of Main Content -->
+            @include('sweetalert::alert')
 
             @include('admin.template.footer')
 

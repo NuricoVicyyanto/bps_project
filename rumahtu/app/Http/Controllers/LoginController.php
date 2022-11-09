@@ -67,6 +67,6 @@ class LoginController extends Controller
             'password' =>bcrypt($request->password),
             'remember_token' =>Str::random(60),
         ]);
-        return view('admin.register');
+        return redirect('registrasi')->with('success', 'Account Created Successfully!');
     }
 }
