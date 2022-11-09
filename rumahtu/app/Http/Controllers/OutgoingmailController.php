@@ -104,7 +104,7 @@ class OutgoingmailController extends Controller
 
         $request->gambar->move(public_path() . '/img', $awal);
         $ubah->update($dt);
-        return redirect('outgoingmail');
+        return redirect('outgoingmail')->with('success', 'Surat Masuk Created Successfully!');
     }
 
     /**
@@ -123,7 +123,7 @@ class OutgoingmailController extends Controller
         }
 
         $dok->delete();
-        return back();
+        return redirect('outgoingmail')->with('success', 'Surat Keluar Deleted Successfully!');
     }
 
     // public function approve($id)
