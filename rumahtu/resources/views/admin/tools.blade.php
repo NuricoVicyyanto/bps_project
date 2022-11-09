@@ -34,6 +34,7 @@
                                     <button type="submit" class="btn btn-primary">Add</button>
                                 </div>
                             </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -68,7 +69,7 @@
                                         </div>
                                     </div>
                                 </div> --}}
-                                <a href="{{ $item->link }}" class="btn btn-sq-lg btn-danger m-1" target="blank_">
+                                <a href="{{ $item->link }}" class="btn btn-sq-lg m-2 shadow" target="blank_">
                                     <img src="{{ $item->image }}" />
                                     <p>{{ $item->title }}</p>
                                 </a>
@@ -82,6 +83,7 @@
         </section>
         <style>
            .btn-sq-lg {
+                background-color: rgb(244, 248, 248);
                 width: 200px !important;
                 height: 200px !important;
             }
