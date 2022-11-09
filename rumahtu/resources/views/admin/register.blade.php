@@ -35,7 +35,7 @@
           </select>
         </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" required name="password" placeholder="Password">
+            <input type="password" class="form-control" minlength="8" required name="password" placeholder="Password">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -51,7 +51,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="number" class="form-control" required name="nip" placeholder="nip">
+            <input type="text" class="form-control" required minlength="18" name="nip" placeholder="nip">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-code"></span>
