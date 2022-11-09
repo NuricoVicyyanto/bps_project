@@ -1,90 +1,78 @@
 @extends('admin.dashboard')
 @section('content')
-    <section class="wrapper">
-        <div class="container-fostrap">
-            <div class="content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="card">
-                                <a class="img-card"
-                                    href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                    <img
-                                        src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" />
-                                </a>
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                            Bootstrap 3 Carousel FadeIn Out Effect
-                                        </a>
-                                    </h4>
-                                    <p class="">
-                                        Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
-                                    </p>
+    @if (auth()->user()->level == 'admin')
+        <div class="container-fluid">
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Tambah Data <i class="fas fa-plus"></i>
+                </button>
+            </p>
+            <div class="collapse mb-3" id="collapseExample">
+                <div class="card card-body">
+                    <form action="{{ route('simpantools') }}" method="POST" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <div class="container-fluid">
+                            <div class="form-group row">
+                                <div class="form-group">
+                                    <label for="title" class="col-form-label">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title"
+                                        placeholder="Title">
                                 </div>
-                                <div class="card-read-more">
-                                    <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"
-                                        class="btn btn-link btn-block">
-                                        Read More
-                                    </a>
+                                <br>
+                                <div class="form-group">
+                                    <label for="title" class="col-form-label">Link</label>
+                                    <input type="text" class="form-control" id="link" name="link"
+                                        placeholder="Link">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="card">
-                                <a class="img-card"
-                                    href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
-                                    <img
-                                        src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
-                                </a>
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <a
-                                            href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html">
-                                            Material Design Responsive Menu
-                                        </a>
-                                    </h4>
-                                    <p class="">
-                                        Material Design is a visual programming language made by Google. Language
-                                        programming...
-                                    </p>
-                                </div>
-                                <div class="card-read-more">
-                                    <a href="https://codepen.io/wisnust10/full/ZWERZK/" class="btn btn-link btn-block">
-                                        Read More
-                                    </a>
+                                <div class="form-group">
+                                    <label for="nama" class="col-form-label">Upload Image</label>
+                                    <div class="custom-file mb-2">
+                                        <input type="file" id="image" name="image">
+                                        {{-- <label class="custom-file-label" for="customFile">Surat Masuk</label> --}}
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Add</button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="card">
-                                <a class="img-card"
-                                    href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
-                                    <img
-                                        src="https://4.bp.blogspot.com/-TDIJ17DfCco/Vtneyc-0t4I/AAAAAAAABmk/aa4AjmCvRck/s1600/cover.jpg" />
-                                </a>
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">5
-                                            Button Hover Animation Effects
+                    </form>
+                </div>
+            </div>
+        </div>
+        @else
+        @endif
+
+
+        <section class="wrapper">
+            <div class="container-fostrap">
+                <div class="content">
+                    <div class="container">
+                        <div class="row">
+
+                            @foreach ($dtTools as $item)
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="card">
+                                        <a class="img-card" href="{{ $item->link }}">
+                                            <img src="{{ $item->image }}" />
                                         </a>
-                                    </h4>
-                                    <p class="">
-                                        tutorials button hover animation, although very much a hover button is very
-                                        beauti...
-                                    </p>
+                                        <div class="card-content">
+                                            <h4 class="card-title">
+                                                <a href="{{ $item->link }}">
+                                                    {{ $item->title }}
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div class="card-read-more">
+                                            <a href="{{ $item->link }}" class="btn btn-link btn-block">
+                                                Open
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-read-more">
-                                    <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html"
-                                        class="btn btn-link btn-block">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-@endsection
+        </section>
+    @endsection
