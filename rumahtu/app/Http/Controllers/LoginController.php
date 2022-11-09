@@ -37,6 +37,26 @@ class LoginController extends Controller
     }
 
     public function simpanregistrasi(Request $request){
+
+        $this->validate(
+            $request, [
+                'name'      => 'required',
+                'email'     => 'required',
+                'no_hp'     => 'required',
+                'nip'       => 'required|max:18|min:18',
+                'jabatan'   => 'required|',
+                'password'  => 'required|min:8',
+            ],
+                // [
+                //     'name.required'     =>  'Nama tidak boleh kosong',
+                //     'email.required'    =>  'Email tidak boleh kosong',
+                //     'no_hp.required'    =>  'Nomer Hp tidak boleh kosong',
+                //     'nip.required'      =>  'Nip tidak boleh kosong',
+                //     'nip.min:18'        =>  'Nip tidak boleh kurang dari 18 angka',
+                //     'nip.max:18'        =>  'Nip tidak boleh lebih dari 18 angka'
+                // ]
+        );
+
         User::create([
             'name' => $request->name,
             'level' => $request->level,
@@ -47,6 +67,6 @@ class LoginController extends Controller
             'password' =>bcrypt($request->password),
             'remember_token' =>Str::random(60),
         ]);
-        return view('admin.register');
+        return redirect('registrasi')->with('success', 'Account Created Successfully!');
     }
 }

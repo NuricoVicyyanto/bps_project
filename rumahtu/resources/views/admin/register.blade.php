@@ -9,6 +9,18 @@
       <div class="card-body register-card-body m-4">
         <p class="login-box-msg">Register a new account</p>
 
+                                   {{-- menampilkan error validasi --}}
+                                   @if (count($errors) > 0)
+                                   <div class="alert alert-danger">
+                                       <ul>
+                                           @foreach ($errors->all() as $error)
+                                               <li>{{ $error }}</li>
+                                           @endforeach
+                                       </ul>
+                                   </div>
+                                   @endif
+
+
         <form action="{{ route('simpanregistrasi')}}" method="post">
           {{ csrf_field() }}
           <div class="input-group mb-3">
@@ -51,7 +63,16 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" required minlength="18" name="nip" placeholder="nip">
+            <input type="number" id="nip" name="nip" id="nip" class="form-control 
+            @error('nip')
+            is-invalid   
+            @enderror" value="{{ old('nip') }}" required>
+
+            @error('nip')
+            <div class="invalid-feedback">
+              {{$message}}
+            </div>
+            @enderror
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-code"></span>
@@ -85,4 +106,5 @@
   <!-- /.register-box -->
 
 </div>
+
 @endsection
