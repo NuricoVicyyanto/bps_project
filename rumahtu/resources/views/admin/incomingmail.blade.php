@@ -15,9 +15,11 @@
 <!-- Add to .select ➡️ style="--select-border: red; --select-focus: red" -->
 <p>
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-      Tambah Data <i class="fas fa-plus"></i>
+      <i class="fas fa-plus"></i> Tambah Data
     </button>
+    <a class="btn btn-success" href="{{ url("export-surmas") }}"><i class="fas fa-download"> Export</i></a>
   </p>
+  
   <div class="collapse mb-3" id="collapseExample">
     <div class="card card-body">
         <form action="{{ route('simpansuratmasuk')}}" method="POST" enctype="multipart/form-data">

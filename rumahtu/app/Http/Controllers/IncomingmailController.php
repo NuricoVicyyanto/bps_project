@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Surmas;
-
+use App\Exports\InmailExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class IncomingmailController extends Controller
 {
@@ -18,7 +19,11 @@ class IncomingmailController extends Controller
 
         $dtsuratmasuk = Surmas::latest()->get();
         return view('admin.incomingmail', compact('dtsuratmasuk'));
+    }
 
+    public function export() 
+    {
+        return Excel::download(new InmailExport, 'inmail.xlsx');
     }
 
     /**
@@ -144,7 +149,5 @@ class IncomingmailController extends Controller
     //     return redirect()->back(); //Redirect user somewhere
     // }
 
-
-
+    
 }
-

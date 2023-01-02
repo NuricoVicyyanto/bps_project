@@ -102,6 +102,6 @@ class PenggunaController extends Controller
     {
         $peng = User::findorfail($id);
         $peng->delete();
-        return redirect('daftaruser');
+        return redirect('daftaruser')->with('success', 'User Deleted Successfully!');
     }
 }
