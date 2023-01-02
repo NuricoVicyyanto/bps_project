@@ -17,6 +17,7 @@
                 aria-expanded="false" aria-controls="collapseExample">
                 Tambah Data <i class="fas fa-plus"></i>
             </button>
+            <a class="btn btn-success" href="{{ url("export-surkel") }}"><i class="fas fa-download"> Export</i></a>
         </p>
         <div class="collapse mb-3" id="collapseExample">
             <div class="card card-body">

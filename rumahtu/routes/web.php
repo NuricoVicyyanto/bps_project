@@ -89,6 +89,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/simpantools', [ToolsController::class, 'store'])->name('simpantools');
 
     Route::get('/export-surmas', [IncomingmailController::class, 'export'])->name('export-surmas');
+    Route::get('/export-surkel', [OutgoingmailController::class, 'export'])->name('export-surkel');
 
 });
 

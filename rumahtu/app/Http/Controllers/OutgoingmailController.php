@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Surkel;
+use App\Exports\OutmailExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class OutgoingmailController extends Controller
@@ -17,6 +19,11 @@ class OutgoingmailController extends Controller
     {
         $dtsuratkeluar = Surkel::latest()->get();
         return view('admin.outgoingmail', compact('dtsuratkeluar'));
+    }
+
+    public function export() 
+    {
+        return Excel::download(new OutmailExport, 'outmail.xlsx');
     }
 
     /**
