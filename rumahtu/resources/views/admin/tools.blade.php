@@ -70,9 +70,13 @@
                                     </div>
                                 </div> --}}
                                 <a href="{{ $item->link }}" class="btn btn-sq-lg m-2 shadow" target="blank_">
-                                    <img src="{{ $item->image }}" />
+                                    <img src="/images/{{ $item->image }}" />
                                     <p>{{ $item->title }}</p>
                                 </a>
+                                @if (auth()->user()->level == 'admin')
+                                <p><a href="{{ url('hapustool', $item->id) }}"><i class="fas fa-times"></i></a></p>
+                                @else
+                                @endif
 
                             @endforeach
 
@@ -83,9 +87,10 @@
         </section>
         <style>
            .btn-sq-lg {
-                background-color: rgb(244, 248, 248);
+                background-color: rgb(255, 255, 255);
                 width: 200px !important;
                 height: 200px !important;
+                border: 4px;
             }
             .btn-sq-lg img {
                 width: 150px;

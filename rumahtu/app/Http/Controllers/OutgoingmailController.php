@@ -7,7 +7,6 @@ use App\Models\Surkel;
 use App\Exports\OutmailExport;
 use Maatwebsite\Excel\Facades\Excel;
 
-
 class OutgoingmailController extends Controller
 {
     /**
@@ -45,7 +44,7 @@ class OutgoingmailController extends Controller
     public function store(Request $request)
     {
         $nm = $request->file;
-        $namaFile = "http://127.0.0.1:8000/img/suratkeluar_" . $nm->getClientOriginalName();
+        $namaFile = date('YmdHis') . "." . $nm->getClientOriginalName();
 
         $dtUpload = new Surkel;
         $dtUpload->index = $request->index;
@@ -56,10 +55,10 @@ class OutgoingmailController extends Controller
         $dtUpload->perihal = $request->perihal;
         $dtUpload->file = $namaFile;
 
-        $nm->move(public_path() . '/img', $namaFile);
+        $nm->move(public_path() . '/files', $namaFile);
         $dtUpload->save();
 
-        return redirect('outgoingmail');
+        return redirect('outgoingmail')->with('success', 'Surat keluar Created Successfully!');
     }
 
     /**
@@ -82,7 +81,7 @@ class OutgoingmailController extends Controller
     public function edit($id)
     {
         $dok = Surkel::findorfail($id);
-        return view('admin.editoutgoingmail', compact('dok'));
+        return view('admin.editincomingmail', compact('dok'));
     }
 
     /**
@@ -105,13 +104,11 @@ class OutgoingmailController extends Controller
             'tanggal' => $request['tanggal'],
             'perihal' => $request['perihal'],
             'file' => $awal,
-
-
         ];
 
         $request->gambar->move(public_path() . '/img', $awal);
         $ubah->update($dt);
-        return redirect('outgoingmail')->with('success', 'Surat Masuk Created Successfully!');
+        return redirect('outgoingmail');
     }
 
     /**
@@ -123,14 +120,14 @@ class OutgoingmailController extends Controller
     public function destroy($id)
     {
         $dok = Surkel::findorfail($id);
-        $file = public_path('/img/') . $dok->gambar;
+        $file = public_path('/img') . $dok->file;
 
         if (file_exists($file)) {
-            @unlink($file);
+            unlink($file);
         }
 
         $dok->delete();
-        return redirect('outgoingmail')->with('success', 'Surat Keluar Deleted Successfully!');
+        return redirect('outgoingmail')->with('success', 'Surat keluar Deleted Successfully!');
     }
 
     // public function approve($id)
@@ -148,4 +145,6 @@ class OutgoingmailController extends Controller
     //     $leave->save();
     //     return redirect()->back(); //Redirect user somewhere
     // }
+
+    
 }

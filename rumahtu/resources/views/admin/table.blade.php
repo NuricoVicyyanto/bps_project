@@ -37,7 +37,7 @@
                                             <td><span class="badge badge-danger">{{ $item->review }}</span>
                                             </td>
                                         @endif
-                                        <td><a href="{{ $item->file }}">Download</a></td>
+                                        <td><a href="/files/{{ $item->file }}">Download</a></td>
 
                                         <td>
                                             <a href="{{ url('hapustask', $item->id) }}" type="button"

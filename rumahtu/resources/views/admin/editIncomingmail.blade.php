@@ -59,7 +59,7 @@
       </div>
       <div class="form-group">
         {{-- <img src="{{ asset('img/'. $inf->gambar)}}" height="10%" width="50%" alt=""> --}}
-        <img src="{{ asset($dok->file)}}" height="10%" width="50%" alt="">
+
       </div>
     <button type="submit" class="btn btn-primary">Edit</button>
 </div>

@@ -86,7 +86,6 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>No</th>
                                 <th>Index</th>
                                 <th>Bulan</th>
                                 <th>No Surat</th>
@@ -95,19 +94,17 @@
                                 <th>Perihal</th>
                                 <th>File</th>
                                 <th>Aksi</th>
-
                             </tr>
                         </thead>
                         @foreach ($dtsuratmasuk as $item)
                         <tbody>
-                            <td></td>
                             <td>{{ $item->index }}</td>
                             <td>{{ $item->date }}</td>
                             <td>{{ $item->kode_surat }}</td>
                             <td>{{ $item->alamat }}</td>
                             <td>{{ $item->tanggal }}</td>
                             <td>{{ $item->perihal }}</td>
-                            <td><a href="{{ asset($item->file)}}" target="blank" rel="noopener oreferrer">Lihat Gambar</a></td>
+                            <td><a href="/files/{{ $item->file }}" target="blank" rel="noopener oreferrer">Download</a></td>
                             <td>
                                 <a href="{{ url('editsuratmasuk', $item->id) }}" type="button" class="btn btn-warning"
                                 data-toggle="edit-atas" data-placement="right" title="Edit data"><i

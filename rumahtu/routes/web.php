@@ -78,7 +78,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/updatesuratmasuk/{id}', [IncomingmailController::class, 'update'])->name('updatesuratmasuk');
 
 
-
     Route::get('/outgoingmail', [OutgoingmailController::class, 'index'])->name('outgoingmail');
     Route::post('/simpansuratkeluar', [OutgoingmailController::class, 'store'])->name('simpansuratkeluar');
     Route::get('/hapussuratkeluar/{id}', [OutgoingmailController::class, 'destroy'])->name('hapussuratkeluar');
@@ -90,6 +89,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/export-surmas', [IncomingmailController::class, 'export'])->name('export-surmas');
     Route::get('/export-surkel', [OutgoingmailController::class, 'export'])->name('export-surkel');
+
+    Route::get('/hapustool/{id}', [ToolsController::class, 'destroy'])->name('hapustool');
 
 });
 

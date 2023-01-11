@@ -37,16 +37,34 @@ class ToolsController extends Controller
      */
     public function store(Request $request)
     {
-        $nm = $request->image;
-        $namaFile = "http://127.0.0.1:8000/img/tools_" . $nm->getClientOriginalName();
+        // $nm = $request->image;
+        // $namaFile = "http://127.0.0.1:8000/img/tools_" . $nm->getClientOriginalName();
 
-        $dtUpload = new Tools;
-        $dtUpload->title = $request->title;
-        $dtUpload->link = $request->link;
-        $dtUpload->image = $namaFile;
+        // $dtUpload = new Tools;
+        // $dtUpload->title = $request->title;
+        // $dtUpload->link = $request->link;
+        // $dtUpload->image = $namaFile;
 
-        $nm->move(public_path() . '/img', $namaFile);
-        $dtUpload->save();
+        // $nm->move(public_path() . '/img', $namaFile);
+        // $dtUpload->save();
+
+        // return redirect('tools');
+        $request->validate([
+            'title' => 'required',
+            'link' => 'required',
+            'image' => 'required',
+        ]);
+
+        $input = $request->all();
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+
+        Tools::create($input);
 
         return redirect('tools');
     }
@@ -93,6 +111,8 @@ class ToolsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $peng = Tools::findorfail($id);
+        $peng->delete();
+        return redirect('tools')->with('success', 'Tool Successfully Deleted!');
     }
 }

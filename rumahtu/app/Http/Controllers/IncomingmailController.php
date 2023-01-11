@@ -45,7 +45,7 @@ class IncomingmailController extends Controller
     public function store(Request $request)
     {
         $nm = $request->file;
-        $namaFile = "http://127.0.0.1:8000/img/suratmasuk_" . $nm->getClientOriginalName();
+        $namaFile = date('YmdHis') . "." .   $nm->getClientOriginalName();
 
         $dtUpload = new Surmas;
         $dtUpload->index = $request->index;
@@ -56,7 +56,7 @@ class IncomingmailController extends Controller
         $dtUpload->perihal = $request->perihal;
         $dtUpload->file = $namaFile;
 
-        $nm->move(public_path() . '/img', $namaFile);
+        $nm->move(public_path() . '/files', $namaFile);
         $dtUpload->save();
 
         return redirect('incomingmail')->with('success', 'Surat Masuk Created Successfully!');

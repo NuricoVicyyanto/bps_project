@@ -5,7 +5,7 @@
     <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="index.html">Surat</a></li>
     {{-- <li class="breadcrumb-item"><a href="javascript:void(0)">Surat Keluar</a></li> --}}
-    <li class="breadcrumb-item active" aria-current="page">Surat Masuk</li>
+    <li class="breadcrumb-item active" aria-current="page">Surat Keluar</li>
     </ol>
     </nav>
 <!-- /Breadcrumb -->

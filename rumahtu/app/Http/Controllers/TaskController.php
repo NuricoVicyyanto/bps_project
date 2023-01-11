@@ -36,7 +36,7 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $nm = $request->file;
-        $namaFile = "http://127.0.0.1:8000/img/" . $nm->getClientOriginalName();
+        $namaFile = date('YmdHis') . "." .  $nm->getClientOriginalName();
 
         $dtUpload = new Task;
         $dtUpload->name = $request->name;
@@ -45,10 +45,11 @@ class TaskController extends Controller
         $dtUpload->review = 'Pending';
         $dtUpload->file = $namaFile;
 
-        $nm->move(public_path() . '/img', $namaFile);
+        $nm->move(public_path() . '/files', $namaFile);
         $dtUpload->save();
 
         return redirect('task');
+
     }
 
     /**

@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
+            $table->string('name', 80);
             $table->string('caption', 100);
             $table->string('date', 100);
-            $table->string('review', 100);
+            $table->string('review', 100)->default("Pending");
             $table->string('file', 100);
             $table->timestamps();
         });

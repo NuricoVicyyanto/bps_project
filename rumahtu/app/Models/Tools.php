@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tools extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['title', 'link', 'image'];
 }

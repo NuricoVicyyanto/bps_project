@@ -47,14 +47,6 @@ class LoginController extends Controller
                 'jabatan'   => 'required|',
                 'password'  => 'required|min:8',
             ],
-                // [
-                //     'name.required'     =>  'Nama tidak boleh kosong',
-                //     'email.required'    =>  'Email tidak boleh kosong',
-                //     'no_hp.required'    =>  'Nomer Hp tidak boleh kosong',
-                //     'nip.required'      =>  'Nip tidak boleh kosong',
-                //     'nip.min:18'        =>  'Nip tidak boleh kurang dari 18 angka',
-                //     'nip.max:18'        =>  'Nip tidak boleh lebih dari 18 angka'
-                // ]
         );
 
         User::create([

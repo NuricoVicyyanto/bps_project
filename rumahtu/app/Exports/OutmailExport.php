@@ -25,3 +25,5 @@ class OutmailExport implements FromCollection
         return ['Index', 'Date', 'Kode Surat', 'Alamat', 'Tanggal', 'Perihal'];
     }
 }
+
+
