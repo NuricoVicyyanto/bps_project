@@ -32,6 +32,8 @@ use App\Http\Controllers\ToolsController;
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/registrasi', [LoginController::class, 'registrasi']);
+    Route::post('/simpanregistrasi', [LoginController::class, 'simpanregistrasi'])->name('simpanregistrasi');
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::get('/registrasi', [LoginController::class, 'registrasi']);
@@ -91,7 +93,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/export-surkel', [OutgoingmailController::class, 'export'])->name('export-surkel');
 
     Route::get('/hapustool/{id}', [ToolsController::class, 'destroy'])->name('hapustool');
-
 });
 
 
