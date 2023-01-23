@@ -5,7 +5,7 @@
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('homepage') }}">
         <div class="sidebar-brand-icon">
             {{-- <i class="fas fa-laugh-wink"></i> --}}
-            <img src="{{asset('assets/img/LogoWhite.png')}}"
+            <img src="{{asset('assets/img/logowhite.png')}}"
                           style="width: 70px;" alt="logo">
         </div>
         {{-- <div class="sidebar-brand-text mx-3">Rumah_TU</div> --}}

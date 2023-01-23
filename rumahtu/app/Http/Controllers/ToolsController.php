@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tools;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ToolsController extends Controller
 {
@@ -112,7 +114,11 @@ class ToolsController extends Controller
     public function destroy($id)
     {
         $peng = Tools::findorfail($id);
-        $peng->delete();
+
+        unlink("images/".$peng->image);
+
+        Tools::where("id", $peng->id)->delete();
+
         return redirect('tools')->with('success', 'Tool Successfully Deleted!');
     }
 }

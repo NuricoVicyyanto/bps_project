@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Surkel;
 use App\Exports\OutmailExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\File; 
 
 class OutgoingmailController extends Controller
 {
@@ -81,7 +82,7 @@ class OutgoingmailController extends Controller
     public function edit($id)
     {
         $dok = Surkel::findorfail($id);
-        return view('admin.editincomingmail', compact('dok'));
+        return view('admin.editoutgoingmail', compact('dok'));
     }
 
     /**
@@ -106,7 +107,7 @@ class OutgoingmailController extends Controller
             'file' => $awal,
         ];
 
-        $request->gambar->move(public_path() . '/img', $awal);
+        $request->gambar->move(public_path() . '/files', $awal);
         $ubah->update($dt);
         return redirect('outgoingmail');
     }
@@ -117,16 +118,14 @@ class OutgoingmailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $dok = Surkel::findorfail($id);
-        $file = public_path('/img') . $dok->file;
 
-        if (file_exists($file)) {
-            unlink($file);
-        }
+    public function destroy($id) {
+        $dok = Surkel::findOrFail($id);
 
-        $dok->delete();
+        unlink("files/".$dok->file);
+
+        Surkel::where("id", $dok->id)->delete();
+
         return redirect('outgoingmail')->with('success', 'Surat keluar Deleted Successfully!');
     }
 

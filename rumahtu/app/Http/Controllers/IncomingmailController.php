@@ -123,13 +123,11 @@ class IncomingmailController extends Controller
     public function destroy($id)
     {
         $dok = Surmas::findorfail($id);
-        $file = public_path('/img') . $dok->file;
+        
+        unlink("files/".$dok->file);
 
-        if (file_exists($file)) {
-            unlink($file);
-        }
+        Surmas::where("id", $dok->id)->delete();
 
-        $dok->delete();
         return redirect('incomingmail')->with('success', 'Surat Masuk Deleted Successfully!');
     }
 
